@@ -81,7 +81,7 @@ account_idとそれに対応するAccount情報（Account）がまとまったHa
 -  
 ## GET  
 🌷 次に、Getを選択  
-🌷 {{< color  yellowgreen "{ここに" >}}{{< color  green "accountId" >}}{{< color  yellowgreen "入れる。"}>}}  
+🌷 {{< color  yellowgreen "{ここに" >}}{{< color  green "accountId" >}}{{< color  yellowgreen "入れる。">}}}  
 🌷 Query Params に入力すると、勝手にパスも?password=passwordと入力される
 🌷 Sendを押すと、JSON形式で返ってきている 
 ![images](/images/postman7.png) 
