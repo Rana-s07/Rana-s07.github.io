@@ -1,0 +1,608 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Swagger  ⏰約20分 - Paper</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Swagger 環境
+・API version：OpenAPI 3.0.0
+・API表示ツール：Swagger UI
+・API編集ツール：Swagger Editor
+ 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+ 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+ GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
+※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です" />
+  <meta name="author" content="←この日付無視してね" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://Rana-s07.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://Rana-s07.github.io/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://Rana-s07.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://Rana-s07.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://Rana-s07.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.87.0" />
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Swagger  ⏰約20分">
+<meta itemprop="description" content="Swagger 環境
+・API version：OpenAPI 3.0.0
+・API表示ツール：Swagger UI
+・API編集ツール：Swagger Editor
+ 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+ 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+ GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
+※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です"><meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-12-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="334">
+<meta itemprop="keywords" content="" />
+  
+  <meta property="og:title" content="Swagger  ⏰約20分" />
+<meta property="og:description" content="Swagger 環境
+・API version：OpenAPI 3.0.0
+・API表示ツール：Swagger UI
+・API編集ツール：Swagger Editor
+ 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+ 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+ GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
+※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Rana-s07.github.io/post/swagger/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-12-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-12-28T00:00:00+00:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Swagger  ⏰約20分"/>
+<meta name="twitter:description" content="Swagger 環境
+・API version：OpenAPI 3.0.0
+・API表示ツール：Swagger UI
+・API編集ツール：Swagger Editor
+ 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+ 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+ GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
+※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です"/>
+
+  
+  
+
+  
+  <link rel="canonical" href="https://Rana-s07.github.io/post/swagger/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://Rana-s07.github.io/"
+      >Paper</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      >
+      
+    </nav>
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Swagger  ⏰約20分</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 28, 2024</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>←この日付無視してね</span>
+      
+    </div>
+    
+  </header>
+
+  <section><hr>
+<p>Swagger 環境<br>
+・API version：OpenAPI 3.0.0<br>
+・API表示ツール：Swagger UI<br>
+・API編集ツール：Swagger Editor</p>
+<hr>
+<h2 id="-swagger-editorhttpseditorswaggerio">📚 <a href="https://editor.swagger.io/">swagger editor</a></h2>
+<ul>
+<li>↑まずはここをクリック</li>
+</ul>
+<h2 id="-swaggerとは">🌞 <strong>Swaggerとは</strong></h2>
+<p>🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります<br>
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います<br>
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます</p>
+<h2 id="-パスの説明をします">🖊 パスの説明をします</h2>
+<h3 id="1-パスとは何か">1. パスとは何か？</h3>
+<p>🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。<br>
+たとえば：</p>
+<ul>
+<li>住所（パス）: localhost:8080/accounts</li>
+<li>意味: 「アカウントの情報がある場所」</li>
+<li>これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。</li>
+</ul>
+<h3 id="2-操作httpメソッドと組み合わせる">2. 操作（HTTPメソッド）と組み合わせる</h3>
+<p>🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：</p>
+<ul>
+<li>GET: データを取得する（見るだけ）</li>
+<li>POST: 新しいデータを追加する（作る）</li>
+<li>PUT: データを更新する（書き換える）</li>
+<li>DELETE: データを削除する（消す）<br>
+※今回使用するのはGETとPUT</li>
+</ul>
+<h2 id="-実際に書いていきます">🖊 実際に書いていきます</h2>
+<p>🌷 画像はswagger editor (左) とswagger UI (右) です</p>
+<ul>
+<li>editor: 設定を書く場所</li>
+<li>UI：editorで書いた設定が反映されてドキュメントになる場所</li>
+</ul>
+<p>🌷 コードをeditorにコピペしながら、UIと比べて理解していきましょう  <br>
+🌷 途中エラーが出ますが、最終的に解消されるのでそのまま進めてください（最終的にエラーが解消されなかったときは再起動してください）</p>
+<p><img src="/images/Swagger_final.png" alt="images"></p>
+<hr>
+<h2 id="ediorを空にして書いていきましょう">ediorを空にして書いていきましょう！</h2>
+<p><img src="/images/Swagger_first.png" alt="images">
+<br/></p>
+<h2 id="-openapi--info">① openapi / info</h2>
+<ul>
+<li>API の名前・説明を書く場所。</li>
+<li>UI の一番上にそのまま表示されます。</li>
+</ul>
+<p>コピペ用↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.0</span>
+<span style="color:#f92672">info</span>:
+  <span style="color:#f92672">title</span>: <span style="color:#ae81ff">メモAPI</span>
+  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">1.0.0</span>
+  <span style="color:#f92672">description</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">    簡単なメモアプリ用のAPIです。
+</span><span style="color:#e6db74">    1つのメモデータを取得・更新することができます。</span>    
+</code></pre></div><p><img src="/images/Swagger_openapi_info.png" alt="images">
+<br/></p>
+<h2 id="-tags">② tags</h2>
+<ul>
+<li>APIをグループ分けするためのタグ。</li>
+<li>UIにmemoという見出しができます。</li>
+</ul>
+<p>コピペ用↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tags</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">memo</span>
+    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモ内容の取得・更新</span>
+</code></pre></div><p><img src="/images/Swagger_tags.png" alt="images">
+<br/></p>
+<h2 id="-pathsapiの本体">③ paths（APIの本体）</h2>
+<h3 id="1-get-memo取得">1. GET /memo（取得）</h3>
+<ul>
+<li>メモを「読む」API。</li>
+<li>UI に青い「GET」ボタンが表示されます。</li>
+</ul>
+<p>コピペ用↓</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">paths</span>:
+  <span style="color:#f92672">/memo</span>:
+    <span style="color:#f92672">get</span>:
+      <span style="color:#f92672">tags</span>:
+        - <span style="color:#ae81ff">memo</span>
+      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">現在のメモ内容を取得する</span>
+      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">保存されている最新のメモ内容を取得します。</span>
+      <span style="color:#f92672">responses</span>:
+        <span style="color:#e6db74">&#34;200&#34;</span>:
+          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモの取得に成功しました</span>
+          <span style="color:#f92672">content</span>:
+            <span style="color:#f92672">application/json</span>:
+              <span style="color:#f92672">schema</span>:
+                <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/schemas/Memo&#34;</span>
+</code></pre></div><p><img src="/images/Swagger_paths_get.png" alt="images">
+<br/></p>
+<h3 id="2-put-memo更新">2. PUT /memo（更新）</h3>
+<ul>
+<li>メモを「書き換える」API。</li>
+<li>UI に黄色いフォームが表示され、text を入力できます。</li>
+</ul>
+<p>コピペ用↓　⚠インデントに注意！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">put</span>:
+      <span style="color:#f92672">tags</span>:
+        - <span style="color:#ae81ff">memo</span>
+      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">メモ内容を更新する</span>
+      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">指定されたメモ内容で /memo リソースを上書きします。</span>
+      <span style="color:#f92672">requestBody</span>:
+        <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">content</span>:
+          <span style="color:#f92672">application/x-www-form-urlencoded</span>:
+            <span style="color:#f92672">schema</span>:
+              <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span>
+              <span style="color:#f92672">required</span>:
+                - <span style="color:#ae81ff">text</span>
+              <span style="color:#f92672">properties</span>:
+                <span style="color:#f92672">text</span>:
+                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">保存するメモのテキスト（空文字不可）</span>
+                  <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;買い物リスト：りんご、牛乳&#34;</span>
+      <span style="color:#f92672">responses</span>:
+        <span style="color:#e6db74">&#34;200&#34;</span>:
+          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモの更新に成功しました</span>
+          <span style="color:#f92672">content</span>:
+            <span style="color:#f92672">application/json</span>:
+              <span style="color:#f92672">schema</span>:
+                <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/schemas/Memo&#34;</span>
+        <span style="color:#e6db74">&#34;400&#34;</span>:
+          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">textが空</span>
+          <span style="color:#f92672">content</span>:
+            <span style="color:#f92672">text/plain</span>:
+              <span style="color:#f92672">schema</span>:
+                <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+                <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;メモを入力してください&#34;</span>
+</code></pre></div><p><img src="/images/Swagger_paths_put.png" alt="images">
+<br/></p>
+<h2 id="-componentsデータ型">④ components（データ型）</h2>
+<ul>
+<li>API が扱うデータの形（モデル）を定義します。</li>
+<li>UI の下部に「Memo」が表示されて中身が確認できます。</li>
+</ul>
+<p>コピペ用↓　⚠インデントに注意！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">components</span>:
+  <span style="color:#f92672">schemas</span>:
+    <span style="color:#f92672">Memo</span>:
+      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span>
+      <span style="color:#f92672">properties</span>:
+        <span style="color:#f92672">text</span>:
+          <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+          <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;買い物リスト：りんご、牛乳&#34;</span>
+      <span style="color:#f92672">required</span>:
+        - <span style="color:#ae81ff">text</span>
+</code></pre></div><p><img src="/images/Swagger_components.png" alt="images"></p>
+<h3 id="完成">🌷完成！</h3>
+<hr>
+<h2 id="最終版editor">☆最終版editor↓</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.0</span>
+<span style="color:#f92672">info</span>:
+  <span style="color:#f92672">title</span>: <span style="color:#ae81ff">メモAPI</span>
+  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">1.0.0</span>
+  <span style="color:#f92672">description</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">    簡単なメモアプリ用のAPIです。
+</span><span style="color:#e6db74">    1つのメモデータを取得・更新することができます。</span>    
+
+<span style="color:#f92672">tags</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">memo</span>
+    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモ内容の取得・更新</span>
+
+<span style="color:#f92672">paths</span>:
+  <span style="color:#f92672">/memo</span>:
+    <span style="color:#f92672">get</span>:
+      <span style="color:#f92672">tags</span>:
+        - <span style="color:#ae81ff">memo</span>
+      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">現在のメモ内容を取得する</span>
+      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">保存されている最新のメモ内容を取得します。</span>
+      <span style="color:#f92672">responses</span>:
+        <span style="color:#e6db74">&#34;200&#34;</span>:
+          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモの取得に成功しました</span>
+          <span style="color:#f92672">content</span>:
+            <span style="color:#f92672">application/json</span>:
+              <span style="color:#f92672">schema</span>:
+                <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/schemas/Memo&#34;</span>
+
+    <span style="color:#f92672">put</span>:
+      <span style="color:#f92672">tags</span>:
+        - <span style="color:#ae81ff">memo</span>
+      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">メモ内容を更新する</span>
+      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">指定されたメモ内容で /memo リソースを上書きします。</span>
+      <span style="color:#f92672">requestBody</span>:
+        <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>
+        <span style="color:#f92672">content</span>:
+          <span style="color:#f92672">application/x-www-form-urlencoded</span>:
+            <span style="color:#f92672">schema</span>:
+              <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span>
+              <span style="color:#f92672">required</span>:
+                - <span style="color:#ae81ff">text</span>
+              <span style="color:#f92672">properties</span>:
+                <span style="color:#f92672">text</span>:
+                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">保存するメモのテキスト</span>
+                  <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;買い物リスト：りんご、牛乳&#34;</span>
+      <span style="color:#f92672">responses</span>:
+        <span style="color:#e6db74">&#34;200&#34;</span>:
+          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモの更新に成功しました</span>
+          <span style="color:#f92672">content</span>:
+            <span style="color:#f92672">application/json</span>:
+              <span style="color:#f92672">schema</span>:
+                <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/schemas/Memo&#34;</span>
+        <span style="color:#e6db74">&#34;400&#34;</span>:
+          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">textが空</span>
+          <span style="color:#f92672">content</span>:
+            <span style="color:#f92672">text/plain</span>:
+              <span style="color:#f92672">schema</span>:
+                <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+                <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;メモを入力してください&#34;</span>
+
+<span style="color:#f92672">components</span>:
+  <span style="color:#f92672">schemas</span>:
+    <span style="color:#f92672">Memo</span>:
+      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span>
+      <span style="color:#f92672">properties</span>:
+        <span style="color:#f92672">text</span>:
+          <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+          <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;買い物リスト：りんご、牛乳&#34;</span>
+      <span style="color:#f92672">required</span>:
+        - <span style="color:#ae81ff">text</span>
+</code></pre></div><h2 id="最終版ui">☆最終版UI↓</h2>
+<p><img src="/images/Swagger_final_UI.png" alt="images">
+<img src="/images/Swagger_final_UI2.png" alt="images">
+<img src="/images/Swagger_final_UI3.png" alt="images"></p>
+<p>🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。<br>
+🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</p>
+<h2 id="まとめ">まとめ</h2>
+<ul>
+<li>info: APIの基本情報</li>
+<li>tags: カテゴリ分け</li>
+<li>paths: GETやPUTの処理を書く本体</li>
+<li>components: データの定義</li>
+</ul>
+<p>以上でswaggerは終わり🎉</p>
+<p>2/5進んだよ🎊  何分かかかったかな？  休憩してね☕</p>
+<p>次はIntellij ideaでバックエンドのコードを書いていくよ！</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="https://Rana-s07.github.io/post/figma/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Figma  ⏰約30分</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://Rana-s07.github.io/post/intellij_idea/"
+      ><span>Intellij IDEA  ⏰約20分 </span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    © 2024, lee.so
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>
