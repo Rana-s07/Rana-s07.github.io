@@ -1,0 +1,1037 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>AndroidStudio ⏰約100分 - Nitta Labo Tutorial</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="🌞 フロンドエンド書いていくよ！
+🌷 スマホやPC上で動くプログラムをフロントエンドといいます
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます
+🌷 まず、Android Studio のプロジェクトを作成していきましょう
+🖊手順を説明します🐘
+🌷 NewProjectを押します
+
+
+
+
+
+
+🌷 Empty Views Activity を押します
+
+
+
+
+
+
+🌷 Nameにタイトルを入力 （LesonServer）と入力
+🌷 Build configuration languageを Groovy DSL にする
+🌷 Minimum SDKを API30 にする
+
+
+
+
+
+
+🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます
+
+
+
+
+
+
+🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します
+🌷 ＞をクリックしていきます
+
+
+
+
+
+
+🌷 Androidでは画面のことをActivityといいます
+🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります
+🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。
+🌷 次に、activity_main.xml を押しましょう" />
+  <meta name="author" content="←この日付無視してね" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://amika11071107.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://amika11071107.github.io/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://amika11071107.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://amika11071107.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://amika11071107.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.1">
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="AndroidStudio ⏰約100分">
+  <meta itemprop="description" content="🌞 フロンドエンド書いていくよ！ 🌷 スマホやPC上で動くプログラムをフロントエンドといいます
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます
+🌷 まず、Android Studio のプロジェクトを作成していきましょう
+🖊手順を説明します🐘 🌷 NewProjectを押します
+🌷 Empty Views Activity を押します
+🌷 Nameにタイトルを入力 （LesonServer）と入力 🌷 Build configuration languageを Groovy DSL にする
+🌷 Minimum SDKを API30 にする
+🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます
+🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します
+🌷 ＞をクリックしていきます 🌷 Androidでは画面のことをActivityといいます
+🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります
+🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。
+🌷 次に、activity_main.xml を押しましょう">
+  <meta itemprop="datePublished" content="2019-03-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2019-03-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="661">
+  
+  <meta property="og:url" content="https://amika11071107.github.io/post/android_studio/">
+  <meta property="og:site_name" content="Nitta Labo Tutorial">
+  <meta property="og:title" content="AndroidStudio ⏰約100分">
+  <meta property="og:description" content="🌞 フロンドエンド書いていくよ！ 🌷 スマホやPC上で動くプログラムをフロントエンドといいます
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます
+🌷 まず、Android Studio のプロジェクトを作成していきましょう
+🖊手順を説明します🐘 🌷 NewProjectを押します
+🌷 Empty Views Activity を押します
+🌷 Nameにタイトルを入力 （LesonServer）と入力 🌷 Build configuration languageを Groovy DSL にする
+🌷 Minimum SDKを API30 にする
+🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます
+🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します
+🌷 ＞をクリックしていきます 🌷 Androidでは画面のことをActivityといいます
+🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります
+🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。
+🌷 次に、activity_main.xml を押しましょう">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-03-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-03-05T00:00:00+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AndroidStudio ⏰約100分">
+  <meta name="twitter:description" content="🌞 フロンドエンド書いていくよ！ 🌷 スマホやPC上で動くプログラムをフロントエンドといいます
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます
+🌷 まず、Android Studio のプロジェクトを作成していきましょう
+🖊手順を説明します🐘 🌷 NewProjectを押します
+🌷 Empty Views Activity を押します
+🌷 Nameにタイトルを入力 （LesonServer）と入力 🌷 Build configuration languageを Groovy DSL にする
+🌷 Minimum SDKを API30 にする
+🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます
+🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します
+🌷 ＞をクリックしていきます 🌷 Androidでは画面のことをActivityといいます
+🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります
+🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。
+🌷 次に、activity_main.xml を押しましょう">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://amika11071107.github.io/post/android_studio/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://amika11071107.github.io/"
+      >Nitta Labo Tutorial</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">AndroidStudio ⏰約100分</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Mar 5, 2019</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>←この日付無視してね</span>
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="-フロンドエンド書いていくよ">🌞 <strong>フロンドエンド書いていくよ！</strong></h2>
+<p>🌷 スマホやPC上で動くプログラムをフロントエンドといいます<br>
+🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います<br>
+🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます<br>
+🌷 まず、Android Studio のプロジェクトを作成していきましょう</p>
+<h2 id="手順を説明します">🖊手順を説明します🐘</h2>
+<p>🌷 NewProjectを押します<br>
+<img src="https://amika11071107.github.io/images/app1.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Empty Views Activity を押します<br>
+<img src="https://amika11071107.github.io/images/app2.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Nameにタイトルを入力 （LesonServer）と入力
+🌷 Build configuration languageを Groovy DSL にする<br>
+🌷 Minimum SDKを API30 にする<br>
+<img src="https://amika11071107.github.io/images/app3.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます<br>
+<img src="https://amika11071107.github.io/images/app4.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します<br>
+🌷 ＞をクリックしていきます
+<img src="https://amika11071107.github.io/images/app5.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Androidでは画面のことをActivityといいます<br>
+🌷 １つの画面ごとに [画面名]Activity.java と、 activity_[画面名].xml の2つを作ります<br>
+🌷 プロジェクトツールウィンドウ（左の部分）を見ると、app/java/com/example/lessonに MainActivity.java があることが分かります。<br>
+🌷 次に、activity_main.xml を押しましょう</p>
+<p><img src="https://amika11071107.github.io/images/app6.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷このxmlでは、一つの画面のレイアウトをいじります。（後で戻ってくるので理解はざっくりでok）
+<img src="https://amika11071107.github.io/images/app7.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 プロジェクト全体をコンパイルすることをビルドといいます<br>
+（コンパイルとは、コードを機械言語に変換することだが、javaの場合はコードと機械言語の中間に値する中間言語に変換する）<br>
+🌷 🐘build.gradleにはビルドの設定と、使用するライブラリが書かれています<br>
+🌷 今回は通信をするためにretrofit2というライブラリを使うので、これから設定していきます<br>
+🌷 それでは、build.gradle をあけます<br>
+<img src="https://amika11071107.github.io/images/app8.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 retrofitをダウンロードできるように以下を追加します<br>
+🌷 エラーが出ますが、右上の 🐘を押すとビルドされ、エラーは消えます
+<img src="https://amika11071107.github.io/images/app55.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に MainActivity の名前を SignUpActivity に変えます<br>
+🌷 figmaでは３つの画面を作りましたね<br>
+🌷 後ほど、SettingsActivity.java や AccountListActivity.java も作成します
+<img src="https://amika11071107.github.io/images/app56.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷  MainActivityを右クリックして、Refactorを押し、Renameを押します
+<img src="https://amika11071107.github.io/images/app11.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 すると以下の画面が出てくるので、figmaに設定したのと同じ名前（にしたら分かりやすい）に変更します。<br>
+～単語の先頭は大文字にするのが一般的～<br>
+<img src="https://amika11071107.github.io/images/app12.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 同じように、レイアウトの名前も分かりやすいように変えます
+<img src="https://amika11071107.github.io/images/app13.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷mainの部分をsign_upなどと分かりやすいように変えます。<br>
+～単語の先頭は小文字にし、大文字の前に_を入れるのが一般的（画像は_が入ってないけど無視してください）～<br>
+<img src="https://amika11071107.github.io/images/app14.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、com/example/lessonの下にPackageをviews,models,restの3つ作ります<br>
+🌷 理由は、後でファイルを探すときに困るので、整理するために作っておきます<br>
+<img src="https://amika11071107.github.io/images/app15.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 まず、viewsパッケージを作ります
+<img src="https://amika11071107.github.io/images/app16.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷viewsというPackageにSignUpActivityをドラック＆ドロップする（viewの中に入れる）
+<img src="https://amika11071107.github.io/images/app17.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Refactorを押す<br>
+<img src="https://amika11071107.github.io/images/app18.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次にviewsと同じ階層にmodelsパッケージを作りたいです<br>
+🌷 com.example.lesson.viewsとあるが、お構いなしに右クリックを押す
+<img src="https://amika11071107.github.io/images/app20.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 com.example.lesson.viewsの、viewsを消して、modelsと書き換えることで、同じ階層にPackageが作られます
+<img src="https://amika11071107.github.io/images/app21.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 modelパッケージの中にはAccount.javaを作ります
+<img src="https://amika11071107.github.io/images/app23.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Accountと入力
+<img src="https://amika11071107.github.io/images/app24.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Account.javaには、Intellijに書かれたAccount.javaのコードをそのまま貼り付ける<br>
+🌷 1行目だけ消し、以下のように赤線のところにマウスをかざし、青色のメッセージをおす<br>
+<img src="https://amika11071107.github.io/images/app94.png" alt="images">
+🌷 次にviewsやmodelsと同じ階層にrestパッケージを作りたいです。<br>
+🌷 com.example.lessonを右クリックする。
+<img src="https://amika11071107.github.io/images/app25.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 restと入力
+<img src="https://amika11071107.github.io/images/app26.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 restパッケージの中にはAccountRest.javaを作る
+<img src="https://amika11071107.github.io/images/app27.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 AccountRestと入力し、Interfaceを選択する
+<img src="https://amika11071107.github.io/images/app28.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 作られました(o^―^o)ﾆｺ
+<img src="https://amika11071107.github.io/images/app29.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 ここでは、IntellijのAccountRestと対応するように書いていく<br>
+🌷 IntelijではFormParamと書かれているがAndroidStudioではFieldと書く
+<img src="https://amika11071107.github.io/images/app85.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.lessonClient.rest;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.lessonClient.models.Account;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Set;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.Call;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.Field;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.FormUrlEncoded;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.GET;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.POST;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.PUT;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.Path;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> retrofit2.http.Query;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">AccountsRest</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 全体のアカウント一覧</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;accounts&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">getAccounts</span>(
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// サインアップ</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@FormUrlEncoded</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@POST</span>(<span style="color:#e6db74">&#34;accounts&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">signup</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String account_id,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;password&#34;</span>) String password
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//指定されたアカウント情報を返す</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@GET</span>(<span style="color:#e6db74">&#34;accounts/{account_id}&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Account<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAccountInfo</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String account_id,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Query</span>(<span style="color:#e6db74">&#34;password&#34;</span>) String password
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// パスワード変更</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@FormUrlEncoded</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">@PUT</span>(<span style="color:#e6db74">&#34;accounts/{account_id}/password&#34;</span>)
+</span></span><span style="display:flex;"><span>  Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">changePW</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String account_id,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;new_password&#34;</span>) String new_password,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Field</span>(<span style="color:#e6db74">&#34;old_password&#34;</span>) String old_password
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 activity.sign_up_xmlで画面が小さいなぁって思ったら、ctrl押しながらカーソルころころすると、
+<img src="https://amika11071107.github.io/images/app30.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 アップできます(o^―^o)ﾆｺ
+<img src="https://amika11071107.github.io/images/app31.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 左側のButtonやTextBoxを引っ張ってきて配置できるので、<br>
+<img src="https://amika11071107.github.io/images/app32.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 figma参考にしながらこのような画面を作る
+<img src="https://amika11071107.github.io/images/app33.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Buttonを選択しているとき、右のtextでRegisterと打ち、Enterを押すと、<br>
+<img src="https://amika11071107.github.io/images/app34.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 ボタンにはRegisterと表示される<br>
+🌷 右のidにはRegisterbuttonなどと入力しておく。（後で使う）
+<img src="https://amika11071107.github.io/images/app35.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、ボタンやテキストは、選択したときに出てくる青い点を縦横右左に引っ張って、端にくっつける
+<img src="https://amika11071107.github.io/images/app36.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 くっつけた状態で配置したい位置に配置する<br>
+<img src="https://amika11071107.github.io/images/app37.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 テキストボックスも同じようにtextをSignUpに変え、idもSignUpなどとし、Refactorを押す<br>
+<img src="https://amika11071107.github.io/images/app38.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 このようになっていたらOK
+<img src="https://amika11071107.github.io/images/app39.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 acitvity_sign_up.xmlの、Codeの方を選ぶと、このようなコードが書かれている<br>
+🌷 以下の部分でSignUpのテキストのことが書かれている<br>
+🌷 以下のように android:textAlignment=&ldquo;center&quot;を入れると、右でも左でもなく真ん中に来てくれる<br>
+<img src="https://amika11071107.github.io/images/app40.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 android:textColor=&quot;#000000&rdquo;  色が黒にできる<br>
+🌷 android:textSize=&ldquo;38sp&rdquo;  テキストのサイズを調節できる<br>
+🌷 android:textStyle=&ldquo;bold&rdquo;  文字が太くなる
+<img src="https://amika11071107.github.io/images/app42.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Designに戻るとこんな風に表示される
+<img src="https://amika11071107.github.io/images/app43.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 ここはmatch_parentにする
+<img src="https://amika11071107.github.io/images/app44.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に入力画面を作りたいとき、Text の Plain Text を画面に引っ張ってくる
+<img src="https://amika11071107.github.io/images/app45.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 android:hint=&quot; Username&quot; 薄く入力内容のヒントを書くときこのように書く<br>
+🌷 textは消す<br>
+<img src="https://amika11071107.github.io/images/app48.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 UsernameとPasswordそれぞれにidを設定し、壁に固定して、以下のようになるとOK
+<img src="https://amika11071107.github.io/images/app50.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 空のテキストボックスも作る。これはエラーを表示させる場所。idも設定する
+<img src="https://amika11071107.github.io/images/app53.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、SettingActivityを作りたい<br>
+<img src="https://amika11071107.github.io/images/app33.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 SignUpActivityを選択した状態で、File → New Activity → Empty Views Activityを押す<br>
+🌷 この作り方だと、javaファイルだけでなく、xmlファイルも同時に作ってくれる👏	　　
+<img src="https://amika11071107.github.io/images/app57.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 同時にAccountsListActivityも作る<br>
+🌷 以下のようになれば正解<br>
+<img src="https://amika11071107.github.io/images/app81.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 activity_settings.xmlをfigmaを見ながら作る
+<img src="https://amika11071107.github.io/images/app33.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 パスワード変更のボタンを忘れていたので少しレイアウトが変わりました笑<br>
+🌷 こちらを見よう見まねで作ってみましょう<br>
+<img src="https://amika11071107.github.io/images/app86.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、SignUpActivityに戻り、registerボタンを押すとSettings画面に遷移するようにする<br>
+🌷 最初はこのようになっているはずだが、少なかったら以下のようにする
+<img src="https://amika11071107.github.io/images/app64.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 以下のコードを追加する<br>
+<img src="https://amika11071107.github.io/images/app65.png" alt="images"></p>
+<p>🌷 findViewByIdメソッド：<br>
+XMLレイアウトファイルで定義されたボタンのIDを引数に渡してボタンを取得します</p>
+<p>🌷 (Button)：<br>
+取得したビュー（View オブジェクト）を Button 型にキャストする必要があります。
+これは、findViewById が View 型を返すためです。</p>
+<p>🌷 button_register：<br>
+取得したボタンを操作するために button_register という名前の変数に代入しています。
+この変数を使ってボタンに機能を追加します。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>button_register.<span style="color:#a6e22e">setOnClickListener</span>(<span style="color:#66d9ef">new</span> View.<span style="color:#a6e22e">OnClickListener</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>(View view) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// LoginActivity に遷移するための Intent を作成</span>
+</span></span><span style="display:flex;"><span>        Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent(SignUpActivity.<span style="color:#a6e22e">this</span>, SettingsActivity.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>        startActivity(intent); <span style="color:#75715e">// 遷移を実行</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>🌷 button_register.setOnClickListenerメソッド:</p>
+<p>このメソッドは、ボタンがクリックされたときに実行する処理（クリックリスナー）を設定します。</p>
+<p>🌷 @Override:</p>
+<p>onClick メソッドをオーバーライドしています。<br>
+@Override と書くことで、「元々用意された『onClick』の動きを上書きして自分で作り直してますよ！」とプログラムに伝える。そうすることで、onClickのスペルミスによって新しいメソッドが作られてしまうことを防げる</p>
+<p>🌷 onClick(View view):</p>
+<p>ボタンがクリックされるとこのメソッドが呼び出されます。
+引数 view は、クリックされたビュー（この場合は button_register）を指します。</p>
+<p>🌷 Intent:</p>
+<p>Intent は、Android でアクティビティ（画面）間の通信を行う仕組みです。このコードでは、現在のアクティビティ（SignUpActivity）から別のアクティビティ（SettingsActivity）に遷移するための指示を Intent を使って作成しています</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 赤くなっている部分をなくすために以下のようにimport文を追加する</p>
+<p><img src="https://amika11071107.github.io/images/app66.png" alt="images"><br>
+<img src="https://amika11071107.github.io/images/app67.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 動かす仮想マシーンを選択する
+<img src="https://amika11071107.github.io/images/app88.png" alt="images">
+🌷 これで実行▷を押し、ユーザーネームなどは触らず、Registerボタンの押し、Settings画面に遷移するとOK
+<img src="https://amika11071107.github.io/images/app82.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、サーバー（intellij）と通信できるようにするコードを追加し、SignUp時に、account_idとpasswordをサーバに保存してもらえるようにする<br>
+🌷 サーバーと通信を行うため、Android Studio を実行するときには、Intellijを先に実行させておく必要があります<br>
+🌷 まず、SignUpActivity.java の onCreate() メソッドに以下を書く
+<img src="https://amika11071107.github.io/images/app83.png" alt="images">
+🌷 AccountsRest accountsRest = retrofit.create(AccountsRest.class);<br>
+🌷 この行を書くことで<br>
+🌷 accountsRest を使うと、サーバーにデータを送る、サーバーからデータを受け取るといった通信処理を簡単に書けるようになります。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に以下を書く<br>
+🌷 ボタンがクリックされたときに、editidという変数は場所を示す情報が入っており、getTextを使ってaccount_idという変数にはidが取得される<br>
+🌷 パスワードも同様にpasswordという変数にidが取得される</p>
+<p><img src="https://amika11071107.github.io/images/app84.png" alt="images">
+🌷 Call<!-- raw HTML omitted --> call = accountsRest.signup(account_id, password); は、<br>
+🌷 AccountRestのCall<!-- raw HTML omitted --> signupの書き方とそろえる<br>
+🌷 サーバーに「account_id と password を使って、新しいアカウントを作成してください！」とお願いする準備をしています。</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>↓コピー用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span> call.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {  <span style="color:#75715e">// call.enqueueはリクエストをサーバーに送るよ！結果が返ってきたらこれをやってね」という動きを設定します。</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">@Override</span>  <span style="color:#75715e">// 元々用意された『onResponse』の動きを上書きして自分で作り直してますよ！」とプログラムに伝える。</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span>(Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call, Response<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> response) {  <span style="color:#75715e">// サーバーから返事が返ってきた場合に呼ばれる。</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (response.<span style="color:#a6e22e">isSuccessful</span>()) {  <span style="color:#75715e">// さらに返事が「成功かどうか」</span>
+</span></span><span style="display:flex;"><span>              Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent(SignUpActivity.<span style="color:#a6e22e">this</span>, SettingsActivity.<span style="color:#a6e22e">class</span>);  <span style="color:#75715e">// SettingsActivity に遷移</span>
+</span></span><span style="display:flex;"><span>              intent.<span style="color:#a6e22e">putExtra</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>, account_id);  <span style="color:#75715e">// account_idを乗せて次の画面に遷移する</span>
+</span></span><span style="display:flex;"><span>              startActivity(intent);  <span style="color:#75715e">// intentを使って画面遷移</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onFailure</span>(Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call, Throwable t) { <span style="color:#75715e">// サーバーから返事が返ってこなかった場合に呼ばれる。</span>
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;!!!&#34;</span>);  <span style="color:#75715e">// コンソールに!!!と表示（Android画面ではない）</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        });
+</span></span></code></pre></div><p>🌷 以上のコードを書くと、サインアップができるようになったので実行を押す</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 次に、Setting画面に現在のパスワードと新しいパスワードを正しく入力すると変更されるように以下の場所にコードを書いていきます<br>
+<img src="https://amika11071107.github.io/images/app87.png" alt="images">
+🌷 以下のコードをSettingsActivity.java の onCreateメソッド内に書いてください<br>
+🌷 ほとんどSignUpActivityの応用なので、なにが書いてあるか読んでみましょう</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    String str_account_id <span style="color:#f92672">=</span> getIntent().<span style="color:#a6e22e">getStringExtra</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>);
+</span></span><span style="display:flex;"><span>    ((TextView) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">account_id</span>)).<span style="color:#a6e22e">setText</span>(str_account_id);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//通信の初期化</span>
+</span></span><span style="display:flex;"><span>    Retrofit retrofit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;http://10.0.2.2:8080/&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">addConverterFactory</span>(JacksonConverterFactory.<span style="color:#a6e22e">create</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    AccountsRest accountsRest <span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(AccountsRest.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// listボタンを押してlist画面に遷移</span>
+</span></span><span style="display:flex;"><span>    Button button_list <span style="color:#f92672">=</span> (Button) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">List</span>);
+</span></span><span style="display:flex;"><span>    button_list.<span style="color:#a6e22e">setOnClickListener</span>(<span style="color:#66d9ef">new</span> OnClickListener() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>(View view) {
+</span></span><span style="display:flex;"><span>        Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent(SettingsActivity.<span style="color:#a6e22e">this</span>, AccountListActivity.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>        startActivity(intent);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// changeボタンを押してメッセージ表示</span>
+</span></span><span style="display:flex;"><span>    Button button_change <span style="color:#f92672">=</span> (Button) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">change</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    button_change.<span style="color:#a6e22e">setOnClickListener</span>(<span style="color:#66d9ef">new</span> OnClickListener() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span>(View view) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        EditText pw <span style="color:#f92672">=</span> (EditText) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">password</span>);
+</span></span><span style="display:flex;"><span>        String oldpass <span style="color:#f92672">=</span> pw.<span style="color:#a6e22e">getText</span>().<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>        EditText newpw <span style="color:#f92672">=</span> (EditText) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">newpassword</span>);
+</span></span><span style="display:flex;"><span>        String newpass <span style="color:#f92672">=</span> newpw.<span style="color:#a6e22e">getText</span>().<span style="color:#a6e22e">toString</span>().<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call <span style="color:#f92672">=</span> accountsRest.<span style="color:#a6e22e">changePW</span>(str_account_id, newpass, oldpass);
+</span></span><span style="display:flex;"><span>        call.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span>(Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call, Response<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> response) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (response.<span style="color:#a6e22e">isSuccessful</span>()) {
+</span></span><span style="display:flex;"><span>              ((TextView) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">message</span>)).<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;パスワードが変更されました&#34;</span>);
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>              ((TextView) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">message</span>)).<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;パスワードが違います&#34;</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onFailure</span>(Call<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> call, Throwable t) {
+</span></span><span style="display:flex;"><span>            ((TextView) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">message</span>)).<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;Failure&#34;</span>);
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 AccountListActivityにも以下をonCreate内に追加します</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//通信の初期化</span>
+</span></span><span style="display:flex;"><span>    Retrofit retrofit <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Retrofit.<span style="color:#a6e22e">Builder</span>()
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">baseUrl</span>(<span style="color:#e6db74">&#34;http://10.0.2.2:8080/&#34;</span>)
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">addConverterFactory</span>(JacksonConverterFactory.<span style="color:#a6e22e">create</span>())
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">build</span>();
+</span></span><span style="display:flex;"><span>    AccountsRest accountsRest <span style="color:#f92672">=</span> retrofit.<span style="color:#a6e22e">create</span>(AccountsRest.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>    Call<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> call <span style="color:#f92672">=</span> accountsRest.<span style="color:#a6e22e">getAccounts</span>();
+</span></span><span style="display:flex;"><span>    call.<span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">new</span> Callback<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onResponse</span>(Call<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> call, Response<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> response) {
+</span></span><span style="display:flex;"><span>        ((TextView) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">accounts</span>)).<span style="color:#a6e22e">setText</span>(response.<span style="color:#a6e22e">body</span>().<span style="color:#a6e22e">toString</span>());
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onFailure</span>(Call<span style="color:#f92672">&lt;</span>Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> call, Throwable t) {
+</span></span><span style="display:flex;"><span>        ((TextView) findViewById(R.<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">accounts</span>)).<span style="color:#a6e22e">setText</span>(<span style="color:#e6db74">&#34;通信失敗&#34;</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><p>🌷 実行しましょう<br>
+<img src="https://amika11071107.github.io/images/app89.png" alt="images">
+<img src="https://amika11071107.github.io/images/app90.png" alt="images">
+<img src="https://amika11071107.github.io/images/app91.png" alt="images">
+<img src="https://amika11071107.github.io/images/app92.png" alt="images">
+🌷 私はaaaの前にも11というアカウント名で実行していたので二つのアカウントidが出力されました<br>
+<img src="https://amika11071107.github.io/images/app93.png" alt="images"></p>
+<p>🌷 課題は以上です🎊  何分かかかったかな？</p>
+<p>🌷 お疲れ様！</p>
+
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="https://amika11071107.github.io/post/postman/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Postman  ⏰約20分</span></a
+    >
+    
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://amika11071107.github.io/">Nitta Labo Tutorial</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

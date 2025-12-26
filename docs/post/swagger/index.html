@@ -1,0 +1,642 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Swagger  ⏰約20分 - Nitta Labo Tutorial</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="📚 swagger editor
+
+↑まずはここをクリック
+
+🌞 Swaggerとは
+🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします
+1. パスとは何か？
+🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+
+住所（パス）: localhost:8080/accounts
+意味: 「アカウントの情報がある場所」
+これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。
+
+2. 操作（HTTPメソッド）と組み合わせる
+🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+
+GET: データを取得する（見るだけ）
+POST: 新しいデータを追加する（作る）
+PUT: データを更新する（書き換える）
+DELETE: データを削除する（消す）
+
+3. 実際の例で説明
+🌷 アカウント一覧を見る
+
+パス：localhost:8080/accounts
+メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます
+
+🌷 新しいアカウントを作る
+
+パス：localhost:8080/accounts
+メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます
+
+🌷 特定のアカウントの情報を見る
+
+パス：localhost:8080/accounts/abc
+メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます
+
+🌷 特定のアカウントのパスワードを変える
+
+パス：localhost:8080/accounts/abc/password
+メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します
+
+4. {account_id} の役割
+🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます" />
+  <meta name="author" content="←この日付無視してね" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://amika11071107.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://amika11071107.github.io/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://amika11071107.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://amika11071107.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://amika11071107.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.1">
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Swagger  ⏰約20分">
+  <meta itemprop="description" content="📚 swagger editor ↑まずはここをクリック 🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。 2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す） 3. 実際の例で説明 🌷 アカウント一覧を見る
+パス：localhost:8080/accounts メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます 🌷 新しいアカウントを作る
+パス：localhost:8080/accounts メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます 🌷 特定のアカウントの情報を見る
+パス：localhost:8080/accounts/abc メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます 🌷 特定のアカウントのパスワードを変える
+パス：localhost:8080/accounts/abc/password メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します 4. {account_id} の役割 🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます">
+  <meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-12-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="438">
+  
+  <meta property="og:url" content="https://amika11071107.github.io/post/swagger/">
+  <meta property="og:site_name" content="Nitta Labo Tutorial">
+  <meta property="og:title" content="Swagger  ⏰約20分">
+  <meta property="og:description" content="📚 swagger editor ↑まずはここをクリック 🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。 2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す） 3. 実際の例で説明 🌷 アカウント一覧を見る
+パス：localhost:8080/accounts メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます 🌷 新しいアカウントを作る
+パス：localhost:8080/accounts メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます 🌷 特定のアカウントの情報を見る
+パス：localhost:8080/accounts/abc メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます 🌷 特定のアカウントのパスワードを変える
+パス：localhost:8080/accounts/abc/password メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します 4. {account_id} の役割 🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-12-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-28T00:00:00+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Swagger  ⏰約20分">
+  <meta name="twitter:description" content="📚 swagger editor ↑まずはここをクリック 🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
+🖊 まずはパスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
+たとえば：
+住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。 2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
+GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す） 3. 実際の例で説明 🌷 アカウント一覧を見る
+パス：localhost:8080/accounts メソッド：GET
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます 🌷 新しいアカウントを作る
+パス：localhost:8080/accounts メソッド：POST
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます 🌷 特定のアカウントの情報を見る
+パス：localhost:8080/accounts/abc メソッド：GET
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます 🌷 特定のアカウントのパスワードを変える
+パス：localhost:8080/accounts/abc/password メソッド：PUT
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します 4. {account_id} の役割 🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://amika11071107.github.io/post/swagger/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://amika11071107.github.io/"
+      >Nitta Labo Tutorial</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Swagger  ⏰約20分</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 28, 2024</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>←この日付無視してね</span>
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="-swagger-editorhttpseditorswaggerio">📚 <a href="https://editor.swagger.io/">swagger editor</a></h2>
+<ul>
+<li>↑まずはここをクリック</li>
+</ul>
+<h2 id="-swaggerとは">🌞 <strong>Swaggerとは</strong></h2>
+<p>🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります<br>
+🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います<br>
+🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます</p>
+<h2 id="-まずはパスの説明をします">🖊 まずはパスの説明をします</h2>
+<h3 id="1-パスとは何か">1. パスとは何か？</h3>
+<p>🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。<br>
+たとえば：</p>
+<ul>
+<li>住所（パス）: localhost:8080/accounts</li>
+<li>意味: 「アカウントの情報がある場所」</li>
+<li>これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。</li>
+</ul>
+<h3 id="2-操作httpメソッドと組み合わせる">2. 操作（HTTPメソッド）と組み合わせる</h3>
+<p>🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：</p>
+<ul>
+<li>GET: データを取得する（見るだけ）</li>
+<li>POST: 新しいデータを追加する（作る）</li>
+<li>PUT: データを更新する（書き換える）</li>
+<li>DELETE: データを削除する（消す）</li>
+</ul>
+<h3 id="3-実際の例で説明">3. 実際の例で説明</h3>
+<p><strong>🌷 アカウント一覧を見る</strong></p>
+<ul>
+<li>パス：localhost:8080/accounts</li>
+<li>メソッド：GET<br>
+→ 「アカウントが全部見たい！」と頼むと、一覧が返ってきます</li>
+</ul>
+<p><strong>🌷 新しいアカウントを作る</strong></p>
+<ul>
+<li>パス：localhost:8080/accounts</li>
+<li>メソッド：POST<br>
+→ 「このアカウントIDとパスワードで新しいアカウントを作りたい！」と頼むと、サーバーが新しいアカウントを作り、保存してくれます</li>
+</ul>
+<p><strong>🌷 特定のアカウントの情報を見る</strong></p>
+<ul>
+<li>パス：localhost:8080/accounts/abc</li>
+<li>メソッド：GET<br>
+→ 「abc というアカウントの情報が見たい！」と頼むと、そのアカウントの情報だけ返ってきます</li>
+</ul>
+<p><strong>🌷 特定のアカウントのパスワードを変える</strong></p>
+<ul>
+<li>パス：localhost:8080/accounts/abc/password</li>
+<li>メソッド：PUT<br>
+→ 「abc のアカウントのパスワードをこれに変更して！」と頼むと、サーバーがそのパスワードを更新します</li>
+</ul>
+<h3 id="4-account_id-の役割">4. {account_id} の役割</h3>
+<p>🌷 localhost:8080/accounts/{account_id} の {account_id} 部分は「特定のアカウントを指定するための場所」です<br>
+🌷 実際には、この {account_id} の部分が具体的な値（例: abc や xyz）に置き換えられます</p>
+<p>例:</p>
+<ul>
+<li>localhost:8080/accounts/abc → アカウント ID が abc の情報</li>
+<li>localhost:8080/accounts/xyz → アカウント ID が xyz の情報<br>
+これによって、「どのアカウントを操作するか」が分かる仕組みです</li>
+</ul>
+<h3 id="5-まとめこの仕組みのポイント">5. まとめ：この仕組みのポイント</h3>
+<p>🌷 パス: 「どの情報にアクセスするか」を指定する住所のようなもの<br>
+🌷 HTTPメソッド: 「どんな操作をするか」を指定する命令<br>
+🌷 パラメータ（例: {account_id}）: 「具体的にどのデータか」を特定する変数部分<br>
+🌷 こうした仕組みを組み合わせて、サーバーはデータの管理や操作を効率的に行います</p>
+<h2 id="-次に実際に書いていきます">🖊 次に実際に書いていきます</h2>
+<p>🌷 以下は、Swagger editor (左) と Swagger UI (右) です <br>
+🌷 Try our new Editorを押して、左のコードを全部消し、下の画像やコードをコピペしながら、UIと比べて理解していきましょう<br>
+🌷 postとgetは同じ位置にあるかなどインデントに気をつけてコピペしていってください<br>
+🌷 コピペをした際にエラーがとれなかったら再起動しましょう</p>
+<p><img src="https://amika11071107.github.io/images/swagger6.png" alt="images"></p>
+<hr>
+<p>🌷 右のSwagger UIと照らして見ていくと、、</p>
+<p><img src="https://amika11071107.github.io/images/info.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">info</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Lesson - OpenAPI 3.0  </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">1.0.0</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: |-<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    bookチーム-分担1とか  </span>    
+</span></span></code></pre></div><hr>
+<p><img src="https://amika11071107.github.io/images/tags.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tags</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">全アカウントの情報 </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span></code></pre></div><p>🌷タグの名前をaccountsとします📖</p>
+<hr>
+<p><img src="https://amika11071107.github.io/images/required.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">components</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">parameters</span>:  <span style="color:#75715e"># {account_id}のようなものがパスパラメータ</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">account_id</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">in</span>: <span style="color:#ae81ff">path</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">account_id</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">取得対象のユーザーID</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># 必須という意味</span>
+</span></span></code></pre></div><p>🌷{account_id}は後で何回も出てくるので、これパスパラメーターだよーとか、取得対象のユーザーidなんだよーとか、必須項目だよとかここに先に書いておきます。<br>
+🌷後で「- $ref: &ldquo;#/components/parameters/account_id&rdquo;」と書いたら、{account_id}を使えます。</p>
+<hr>
+<p><img src="https://amika11071107.github.io/images/swagger1.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">/accounts</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">get</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:  <span style="color:#75715e"># accountsタグの中のお話📖  </span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">アカウントの一覧を返す </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">アカウントの一覧をリストとして返す </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;200&#39;</span>:  <span style="color:#75715e"># 成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">application/json</span>:  <span style="color:#75715e"># JSON形式で返す</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">type</span>: <span style="color:#ae81ff">array </span> <span style="color:#75715e"># 配列</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">items</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string </span> <span style="color:#75715e"># 文字列</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">example</span>: <span style="color:#ae81ff">id1</span>
+</span></span></code></pre></div><p>🌷/accountsというパスに対してGETをすると、成功だった場合（200)、アカウントの一覧をリストとしてJSON形式で返すことが書かれています。<br>
+🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。</p>
+<hr>
+<p><img src="https://amika11071107.github.io/images/swagger2.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">post</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:  <span style="color:#75715e"># accountsタグの中のお話📖  </span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">アカウントの新規作成 </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">account_idとpasswordを設定し新しいアカウントを作成する </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">requestBody</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># repuestBodyは必須項目</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">application/x-www-form-urlencoded</span>:  <span style="color:#75715e"># この形式でaccount_idとpasswordが登録される。</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object </span> <span style="color:#75715e"># object型データとはkeyとvalueで構成されるデータ。</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">account_id</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">アカウント名</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">password</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">required</span>:  <span style="color:#75715e"># 必須項目</span>
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">account_id</span>
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;200&#39;</span>:  <span style="color:#75715e"># 成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">成功</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;409&#39;</span>:  <span style="color:#75715e"># 競合</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">すでにaccount_idが存在したとき</span>
+</span></span></code></pre></div><p>🌷/accountsというパスに対してPOSTをすると、成功だった場合（200)、x-www-form-urlencoded形式で、account_idとpasswordが keyとvalueで構成されるobject型データで登録されることが書かれています。 <br>
+🌷object型データというのは以下のような形</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">例 </span>: 
+</span></span><span style="display:flex;"><span>{  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;key&#34;</span>        :  <span style="color:#e6db74">&#34;value&#34;</span>,  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;account_id&#34;</span> :  <span style="color:#e6db74">&#34;nitta217lab&#34;</span>,  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;password&#34;</span>   :  <span style="color:#e6db74">&#34;13nitta217&#34;</span>  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><hr>
+<p><img src="https://amika11071107.github.io/images/swagger3.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">/accounts/{account_id}:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">get</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:  <span style="color:#75715e"># accountsタグの中のお話📖  </span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">アカウント情報を返す(idとpassword) </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">指定されたアカウントの情報を返す </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">parameters</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/parameters/account_id&#34;</span>  <span style="color:#75715e"># 初めに書いておいたパスパラメータのaccount_id</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">in</span>: <span style="color:#ae81ff">query </span> <span style="color:#75715e"># passwordはqueryParameter</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># パスワードは必須項目</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;200&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">application/json</span>:  <span style="color:#75715e"># JSON形式で返す</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span> <span style="color:#75715e"># object型データ</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">account_id</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">アカウントID</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">example</span>: <span style="color:#ae81ff">amika</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">password</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">example</span>: <span style="color:#ae81ff">abc123</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;401&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード間違い          </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;404&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">IDが存在しません</span>
+</span></span></code></pre></div><p>🌷queryParameterは、<br>
+🌷 id,pass<br>
+🌷/accounts{account_id}というパスに対してGETをすると、成功だった場合（200)、指定されたアカウントの情報（account_idとpassword）をJSON形式で返すことが書かれています。<br>
+🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。</p>
+<hr>
+<p><img src="https://amika11071107.github.io/images/swagger5.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#ae81ff">/accounts/{account_id}/password:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">put</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">パスワードを変更する </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">指定されたIDのアカウントを変更する </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">parameters</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/parameters/account_id&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">requestBody</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">application/x-www-form-urlencoded</span>: <span style="color:#75715e"># この形式のデータを使ってパスワードを変更</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">password</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">変更前のパスワード</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">new_password</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">新しいパスワード</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">required</span>:
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">new_password   </span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;401&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード間違い</span>
+</span></span></code></pre></div><p>🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。<br>
+🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</p>
+<p>以上でswaggerは終わり🎉</p>
+<p>2/5進んだよ🎊  何分かかかったかな？  休憩してね☕</p>
+<p>次はIntellij ideaでバックエンドのコードを書いていくよ！</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="https://amika11071107.github.io/post/figma/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Figma  ⏰約30分</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://amika11071107.github.io/post/intellij_idea/"
+      ><span>Intellij IDEA  ⏰約20分 </span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://amika11071107.github.io/">Nitta Labo Tutorial</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,450 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Intellij - Nitta Labo Tutorial</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="🌷 以下は19thのシトラスプロジェクトです。🍊
+🌷 このように、プロジェクトでは entites, repositories, resources という3つのPakageを作り、その中に 	javaファイルを作っていきます。
+🌷 他のプロジェクトが開いた状態になっている人は、左上の4本線をクリックし、fileからclose projectを押します。
+
+🌷 以下の画面になると、まずはNewProjectを押します。
+
+🌷 左のSpring Bootを選択し、JDKは21以上にします。Nameは好きな者に設定します。私はLessonServerと設定しました。Nextを押し、
+
+🌷 Jerseyを選択し、Createを押す。
+
+🌷 LessonServerを右クリックし、その下に entites, repositories, resourcesという名前の Pakage を作ります
+🌷 画像はLesson1というプロジェクト名で作ってしまっているのでそう書いてありますが気にしないでください(..;)
+
+🌷 entitiesの中には、Account.javaを作ります
+
+🌷Accountと入力します
+
+🌷 resorcesの中には、AccountsRest.javaを作ります
+🌷 repositoriesは今回の練習では使わなそうなので消してもらってもそのままでも大丈夫です
+
+🌷 Account.javaには以下をコピペしてください
+package com.example.LessonServer.entities;
+
+// Account.java
+
+public class Account {
+    private String account_id;
+    private String password;
+
+    public Account(String aid, String pass) {
+        account_id = aid;
+        password = pass;
+    }
+
+    public void setPassword(String p) {
+        password = p;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+}
+🌷 AccountRest.javaには以下をコピペしてください" />
+  <meta name="author" content="amika uemura" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Nitta Labo Tutorial</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Intellij</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 27, 2024</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>amika uemura</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>🌷 以下は19thのシトラスプロジェクトです。🍊<br>
+🌷 このように、プロジェクトでは entites, repositories, resources という3つのPakageを作り、その中に 	javaファイルを作っていきます。<br>
+🌷 他のプロジェクトが開いた状態になっている人は、左上の4本線をクリックし、fileからclose projectを押します。
+<img src="http://localhost:1313/images/in.png" alt="images"></p>
+<p>🌷 以下の画面になると、まずはNewProjectを押します。
+<img src="http://localhost:1313/images/in0.png" alt="images"></p>
+<p>🌷 左のSpring Bootを選択し、JDKは21以上にします。Nameは好きな者に設定します。私はLessonServerと設定しました。Nextを押し、
+<img src="http://localhost:1313/images/in1.png" alt="images"></p>
+<p>🌷 Jerseyを選択し、Createを押す。
+<img src="http://localhost:1313/images/in2.png" alt="images"></p>
+<p>🌷 LessonServerを右クリックし、その下に entites, repositories, resourcesという名前の Pakage を作ります<br>
+🌷 画像はLesson1というプロジェクト名で作ってしまっているのでそう書いてありますが気にしないでください(..;)</p>
+<p><img src="http://localhost:1313/images/in4.png" alt="images"></p>
+<p>🌷 entitiesの中には、Account.javaを作ります
+<img src="http://localhost:1313/images/in5.png" alt="images"></p>
+<p>🌷Accountと入力します
+<img src="http://localhost:1313/images/in6.png" alt="images"></p>
+<p>🌷 resorcesの中には、AccountsRest.javaを作ります<br>
+🌷 repositoriesは今回の練習では使わなそうなので消してもらってもそのままでも大丈夫です<br>
+<img src="http://localhost:1313/images/in7.png" alt="images"></p>
+<p>🌷 Account.javaには以下をコピペしてください</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer.entities;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Account.java</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Account</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String account_id;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String password;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Account</span>(String aid, String pass) {
+</span></span><span style="display:flex;"><span>        account_id <span style="color:#f92672">=</span> aid;
+</span></span><span style="display:flex;"><span>        password <span style="color:#f92672">=</span> pass;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setPassword</span>(String p) {
+</span></span><span style="display:flex;"><span>        password <span style="color:#f92672">=</span> p;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getPassword</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> password;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>🌷 AccountRest.javaには以下をコピペしてください</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.example.LessonServer.resources;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> com.example.LessonServer.entities.Account;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> jakarta.ws.rs.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> jakarta.ws.rs.core.*;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.springframework.stereotype.Component;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.HashMap;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Set;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/accounts&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Component</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AccountsRest</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// key に accountId, value に Account の HashMap を作る</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> HashMap<span style="color:#f92672">&lt;</span>String, Account<span style="color:#f92672">&gt;</span> accounts <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String, Account<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// アカウントの一覧をリストとして返す(GET)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">APPLICATION_JSON</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Set<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAccounts</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> accounts.<span style="color:#a6e22e">keySet</span>();  <span style="color:#75715e">// この書き方で、アカウントの一覧をリストとして返せる</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// account_idとpasswordを設定し新しいアカウントを作成する(POST)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@POST</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Consumes</span>(MediaType.<span style="color:#a6e22e">APPLICATION_FORM_URLENCODED</span>)  <span style="color:#75715e">// bodyに入力する値がある時</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">signup</span>(<span style="color:#a6e22e">@FormParam</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String accountId, <span style="color:#a6e22e">@FormParam</span>(<span style="color:#e6db74">&#34;password&#34;</span>) String password) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// パスワードが入力されていない(null)の場合</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (password <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> response <span style="color:#f92672">=</span> Response.<span style="color:#a6e22e">status</span>(Response.<span style="color:#a6e22e">Status</span>.<span style="color:#a6e22e">BAD_REQUEST</span>) <span style="color:#75715e">// 404</span>
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">entity</span>(<span style="color:#e6db74">&#34;passwordを入力してください&#34;</span>); <span style="color:#75715e">// postmanにこう表示される</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WebApplicationException(response.<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// アカウントが既に存在した場合</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (accounts.<span style="color:#a6e22e">containsKey</span>(accountId)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> response <span style="color:#f92672">=</span> Response.<span style="color:#a6e22e">status</span>(Response.<span style="color:#a6e22e">Status</span>.<span style="color:#a6e22e">CONFLICT</span>)  <span style="color:#75715e">// 409</span>
+</span></span><span style="display:flex;"><span>                        .<span style="color:#a6e22e">entity</span>(<span style="color:#e6db74">&#34;id &#39;&#34;</span> <span style="color:#f92672">+</span> accountId <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39; は既に存在します&#34;</span>);  <span style="color:#75715e">// postmanにこう表示される</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WebApplicationException(response.<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// アカウント作成の処理 200</span>
+</span></span><span style="display:flex;"><span>            Account account <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Account(accountId, password);
+</span></span><span style="display:flex;"><span>            accounts.<span style="color:#a6e22e">put</span>(accountId, account);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 指定されたアカウントの情報を返す(GET)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/{account_id}&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@GET</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">APPLICATION_JSON</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Account <span style="color:#a6e22e">getAccountInfo</span>(<span style="color:#a6e22e">@PathParam</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String accountId, <span style="color:#a6e22e">@QueryParam</span>(<span style="color:#e6db74">&#34;password&#34;</span>) String password) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// account_idが存在しない場合 404</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>accounts.<span style="color:#a6e22e">containsKey</span>(accountId)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> response <span style="color:#f92672">=</span> Response.<span style="color:#a6e22e">status</span>(Response.<span style="color:#a6e22e">Status</span>.<span style="color:#a6e22e">NOT_FOUND</span>).<span style="color:#a6e22e">entity</span>(<span style="color:#e6db74">&#34;IDが存在しません&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WebApplicationException(response.<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        Account account <span style="color:#f92672">=</span> accounts.<span style="color:#a6e22e">get</span>(accountId);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// passwordが存在しない場合 401</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>account.<span style="color:#a6e22e">getPassword</span>().<span style="color:#a6e22e">equals</span>(password)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> response <span style="color:#f92672">=</span> Response.<span style="color:#a6e22e">status</span>(Response.<span style="color:#a6e22e">Status</span>.<span style="color:#a6e22e">UNAUTHORIZED</span>).<span style="color:#a6e22e">entity</span>(<span style="color:#e6db74">&#34;パスワードが間違っています&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WebApplicationException(response.<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// アカウント情報を返す 200</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> account;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// passwordを変更する(PUT)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Path</span>(<span style="color:#e6db74">&#34;/{account_id}/password&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@PUT</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Consumes</span>(MediaType.<span style="color:#a6e22e">APPLICATION_FORM_URLENCODED</span>)  <span style="color:#75715e">// bodyに入力する値がある時</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Produces</span>(MediaType.<span style="color:#a6e22e">APPLICATION_FORM_URLENCODED</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">changePW</span>(<span style="color:#a6e22e">@FormParam</span>(<span style="color:#e6db74">&#34;new_password&#34;</span>) String newPassword,
+</span></span><span style="display:flex;"><span>                                    <span style="color:#a6e22e">@FormParam</span>(<span style="color:#e6db74">&#34;old_password&#34;</span>) String oldPassword,
+</span></span><span style="display:flex;"><span>                                    <span style="color:#a6e22e">@PathParam</span>(<span style="color:#e6db74">&#34;account_id&#34;</span>) String accountId) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// パスワードが間違っている場合 401</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>accounts.<span style="color:#a6e22e">get</span>(accountId).<span style="color:#a6e22e">getPassword</span>().<span style="color:#a6e22e">equals</span>(oldPassword)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> response <span style="color:#f92672">=</span> Response.<span style="color:#a6e22e">status</span>(Response.<span style="color:#a6e22e">Status</span>.<span style="color:#a6e22e">UNAUTHORIZED</span>)
+</span></span><span style="display:flex;"><span>                    .<span style="color:#a6e22e">entity</span>(<span style="color:#e6db74">&#34;パスワードが違います&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> WebApplicationException(response.<span style="color:#a6e22e">build</span>());
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// パスワードを置き換える 200</span>
+</span></span><span style="display:flex;"><span>        accounts.<span style="color:#a6e22e">get</span>(accountId).<span style="color:#a6e22e">setPassword</span>(newPassword);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/swagger/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Swagger</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/postman/"
+      ><span>Postman</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Nitta Labo Tutorial</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

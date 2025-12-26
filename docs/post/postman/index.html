@@ -1,0 +1,541 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Postman  ⏰約20分 - Nitta Labo Tutorial</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="📚 PostMan
+
+↑ここからデスクトップ版Postmanアプリをダウンロードできます
+Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません
+デスクトップにPostmanアプリがない人はダウンロードしましょう
+
+
+Windows 64-bit などと書いたオレンジ色のボタンを押す
+ダウンロードしたexeを開く（setup)
+sign upする
+新しい Workspaces を作るので WorkSpaces と Create Workspace を押す 
+
+名前をLessonServerなどと決め、指示に従っていく
+🌷 この画面が出たらOK
+
+
+🌞 Postmanとは
+🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます
+🖊 作っていきます
+🌷 &#43; を押します
+
+
+
+
+
+
+🌷 Rest API basics を押します
+
+
+
+
+
+
+🌷 GET POST PUT DELが出てきます
+🌷 POSTを押します  
+
+
+
+
+
+
+Post
+🌷 パスは localhost:8080/accountsと入力  
+🌷 Bodyを選択 
+🌷 x-www-form-urlencodedを選択 
+🌷 アカウントとパスワード の KeyとValueを入力するための欄が出てきます
+🌷 Key に account_id ,  passwordと入力
+🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは name と password）
+（これがフォームデータとして x-www-form-urlencoded 形式で送信される
+🌷 Intellij起動し、LessonServer実行してください、
+🌷 Sendを押すと
+🌷 200か204と表示されるとOKです   
+🌷 localhost:8080" />
+  <meta name="author" content="←この日付無視してね" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://amika11071107.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://amika11071107.github.io/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://amika11071107.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://amika11071107.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://amika11071107.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.1">
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Postman  ⏰約20分">
+  <meta itemprop="description" content="📚 PostMan ↑ここからデスクトップ版Postmanアプリをダウンロードできます Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません デスクトップにPostmanアプリがない人はダウンロードしましょう Windows 64-bit などと書いたオレンジ色のボタンを押す ダウンロードしたexeを開く（setup) sign upする 新しい Workspaces を作るので WorkSpaces と Create Workspace を押す 名前をLessonServerなどと決め、指示に従っていく
+🌷 この画面が出たらOK 🌞 Postmanとは 🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます
+🖊 作っていきます 🌷 &#43; を押します 🌷 Rest API basics を押します 🌷 GET POST PUT DELが出てきます
+🌷 POSTを押します Post 🌷 パスは localhost:8080/accountsと入力 🌷 Bodyを選択 🌷 x-www-form-urlencodedを選択 🌷 アカウントとパスワード の KeyとValueを入力するための欄が出てきます
+🌷 Key に account_id , passwordと入力
+🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは name と password）
+（これがフォームデータとして x-www-form-urlencoded 形式で送信される
+🌷 Intellij起動し、LessonServer実行してください、
+🌷 Sendを押すと
+🌷 200か204と表示されるとOKです 🌷 localhost:8080">
+  <meta itemprop="datePublished" content="2019-03-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2019-03-08T00:00:00+00:00">
+  <meta itemprop="wordCount" content="136">
+  
+  <meta property="og:url" content="https://amika11071107.github.io/post/postman/">
+  <meta property="og:site_name" content="Nitta Labo Tutorial">
+  <meta property="og:title" content="Postman  ⏰約20分">
+  <meta property="og:description" content="📚 PostMan ↑ここからデスクトップ版Postmanアプリをダウンロードできます Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません デスクトップにPostmanアプリがない人はダウンロードしましょう Windows 64-bit などと書いたオレンジ色のボタンを押す ダウンロードしたexeを開く（setup) sign upする 新しい Workspaces を作るので WorkSpaces と Create Workspace を押す 名前をLessonServerなどと決め、指示に従っていく
+🌷 この画面が出たらOK 🌞 Postmanとは 🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます
+🖊 作っていきます 🌷 &#43; を押します 🌷 Rest API basics を押します 🌷 GET POST PUT DELが出てきます
+🌷 POSTを押します Post 🌷 パスは localhost:8080/accountsと入力 🌷 Bodyを選択 🌷 x-www-form-urlencodedを選択 🌷 アカウントとパスワード の KeyとValueを入力するための欄が出てきます
+🌷 Key に account_id , passwordと入力
+🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは name と password）
+（これがフォームデータとして x-www-form-urlencoded 形式で送信される
+🌷 Intellij起動し、LessonServer実行してください、
+🌷 Sendを押すと
+🌷 200か204と表示されるとOKです 🌷 localhost:8080">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2019-03-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-03-08T00:00:00+00:00">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Postman  ⏰約20分">
+  <meta name="twitter:description" content="📚 PostMan ↑ここからデスクトップ版Postmanアプリをダウンロードできます Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません デスクトップにPostmanアプリがない人はダウンロードしましょう Windows 64-bit などと書いたオレンジ色のボタンを押す ダウンロードしたexeを開く（setup) sign upする 新しい Workspaces を作るので WorkSpaces と Create Workspace を押す 名前をLessonServerなどと決め、指示に従っていく
+🌷 この画面が出たらOK 🌞 Postmanとは 🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます
+🖊 作っていきます 🌷 &#43; を押します 🌷 Rest API basics を押します 🌷 GET POST PUT DELが出てきます
+🌷 POSTを押します Post 🌷 パスは localhost:8080/accountsと入力 🌷 Bodyを選択 🌷 x-www-form-urlencodedを選択 🌷 アカウントとパスワード の KeyとValueを入力するための欄が出てきます
+🌷 Key に account_id , passwordと入力
+🌷 Value に 自分のつけたいアカウント名とパスワードを入力 （ここでは name と password）
+（これがフォームデータとして x-www-form-urlencoded 形式で送信される
+🌷 Intellij起動し、LessonServer実行してください、
+🌷 Sendを押すと
+🌷 200か204と表示されるとOKです 🌷 localhost:8080">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://amika11071107.github.io/post/postman/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://amika11071107.github.io/"
+      >Nitta Labo Tutorial</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Postman  ⏰約20分</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Mar 8, 2019</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>←この日付無視してね</span>
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="-postmanhttpswwwpostmancomdownloads">📚 <a href="https://www.postman.com/downloads/">PostMan</a></h2>
+<ul>
+<li>↑ここからデスクトップ版Postmanアプリをダウンロードできます</li>
+<li>Postmanにはweb版というブラウザで開けるものと、デスクトップ版があり、デスクトップ版しかlocalhost環境にアクセスできません</li>
+<li>デスクトップにPostmanアプリがない人はダウンロードしましょう</li>
+</ul>
+<ol>
+<li>Windows 64-bit などと書いたオレンジ色のボタンを押す</li>
+<li>ダウンロードしたexeを開く（setup)</li>
+<li>sign upする</li>
+<li>新しい Workspaces を作るので WorkSpaces と Create Workspace を押す <br>
+<img src="https://amika11071107.github.io/images/postman8.png" alt="images"></li>
+<li>名前をLessonServerなどと決め、指示に従っていく<br>
+🌷 この画面が出たらOK
+<img src="https://amika11071107.github.io/images/postman9.png" alt="images"></li>
+</ol>
+<h2 id="-postmanとは">🌞 <strong>Postmanとは</strong></h2>
+<p>🌷 記述したバックエンドのコードが正しく動いているのかをテストするためのツールです<br>
+🌷 バックエンドの Web API を呼び出して、何が返ってきているのかを可視化することができます</p>
+<h2 id="-作っていきます">🖊 作っていきます</h2>
+<p>🌷 + を押します
+<img src="https://amika11071107.github.io/images/postman1.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 Rest API basics を押します
+<img src="https://amika11071107.github.io/images/postman2.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>🌷 GET POST PUT DELが出てきます<br>
+🌷 POSTを押します  <br>
+<img src="https://amika11071107.github.io/images/postman3.png" alt="images"></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2 id="post">Post</h2>
+<p>🌷 パスは <strong><span style="color:yellowgreen">localhost:8080/accounts</span></strong>と<span style="color:deeppink">入力</span>  <br>
+🌷 <span style="color:deeppink">Bodyを選択</span> <br>
+🌷 <span style="color:deeppink">x-www-form-urlencodedを選択</span> <br>
+🌷 <span style="color:deeppink">アカウントとパスワード</span> の <span style="color:purple">KeyとValueを入力するための欄が出てきます</span><br>
+🌷 <span style="color:purple">Key</span> に <span style="color:green">account_id ,  password</span>と<span style="color:deeppink">入力</span><br>
+🌷 <span style="color:purple">Value</span> に 自分のつけたいアカウント名とパスワードを<span style="color:deeppink">入力</span> （ここでは name と password）<br>
+（これがフォームデータとして <span style="color:deeppink">x-www-form-urlencoded</span> 形式で送信される<br>
+🌷 <strong>Intellij起動</strong>し、LessonServer実行してください、<br>
+🌷 <span style="color:deeppink">Sendを押すと</span><br>
+🌷 <span style="color:purple">200か204</span>と表示されるとOKです   <br>
+🌷 <strong><span style="color:yellowgreen">localhost:8080</span></strong></p>
+<ul>
+<li><strong>localhost</strong>はコンピュータ自信を指す特別なホスト名</li>
+<li>IPアドレスに置き換えると127.0.0.1と同じ</li>
+<li><strong>8080</strong>はポート番号<br>
+<img src="https://amika11071107.github.io/images/postman6.png" alt="images"><br>
+👀 swagger
+<img src="https://amika11071107.github.io/images/swagger2.png" alt="images"></li>
+</ul>
+<p>👀 AccountRest.java (Intellij IDEA)<br>
+🌷 POSTは、@Consumesがいる
+<img src="https://amika11071107.github.io/images/post1.png" alt="images">
+account_idとそれに対応するAccount情報（Account）がまとまったHashMapを作成し、accounts変数に代入</p>
+<h3 id="accountsの内容例-hashmap"><strong>accountsの内容例 (HashMap)</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Key (<code>account_id</code>)</strong></th>
+          <th><strong>Value (<code>Account</code> オブジェクト)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&ldquo;name&rdquo;</td>
+          <td>Account(account_id=&ldquo;name&rdquo;, password=&ldquo;password&rdquo;)</td>
+      </tr>
+      <tr>
+          <td>&ldquo;name2&rdquo;</td>
+          <td>Account(account_id=&ldquo;name2&rdquo;, password=&ldquo;password!&rdquo;)`</td>
+      </tr>
+  </tbody>
+</table>
+<p>🌷  KeyはSet（集合）なので、かぶってはいけない</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2 id="get">GET</h2>
+<p>🌷 次に、Getを選択<br>
+🌷 <span style="color:yellowgreen">{ここに</span><span style="color:green">accountId</span><span style="color:yellowgreen">入れる}。</span><br>
+🌷 Query Params に入力すると、勝手にパスも?password=passwordと入力される
+🌷 Sendを押すと、JSON形式で返ってきている
+<img src="https://amika11071107.github.io/images/postman7.png" alt="images"></p>
+<p>👀 Swagger<br>
+<img src="https://amika11071107.github.io/images/swagger3.png" alt="images"></p>
+<p>👀 AccountRest.java  (Intellij IDEA)
+<img src="https://amika11071107.github.io/images/get1.png" alt="images">　　</p>
+<p>👀 Account.java<br>
+<img src="https://amika11071107.github.io/images/aj.png" alt="images"></p>
+<p>以上でPostmanは終わり🎉</p>
+<p>4/5終わったよ🎊  何分かかかったかな？  休憩してね☕</p>
+<p>次はAndroidStudioでフロントエンドを書いていくよ！</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="https://amika11071107.github.io/post/intellij_idea/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Intellij IDEA  ⏰約20分 </span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://amika11071107.github.io/post/android_studio/"
+      ><span>AndroidStudio ⏰約100分</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://amika11071107.github.io/">Nitta Labo Tutorial</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

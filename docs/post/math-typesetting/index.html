@@ -1,0 +1,419 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Postman - Nitta Labo Tutorial</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="端末に情報を入力したときに、何が返ってきているのかを可視化するためのツール
+PostMan
+どうにかして新規登録をすると、下の画面が出てきます
+
+↑〇を押します
+.
+.
+
+↑□を押すと、
+.
+.
+↓GET POST PUT DELが出てきます
+
+↑POSTを押す
+.
+.
+Post
+↓Bodyを選択 
+↓x-www-form-urlencodedを選択 
+↓アカウントとパスワード の KeyとValueを入力するための欄が出てきます
+↓Key に account_id ,  passwordと入力
+↓Value に 自分のつけたいアカウント名とパスワードを入力
+（これがフォームデータとして x-www-form-urlencoded 形式で送信される
+Intellij起動して、
+↓Sendを押すと
+↓tokenが出てきます
+・tokenは登録したアカウント情報をGETするときや、アカウントをDELETEするときに利用する。
+・2回目にpostしたときは、「（入力したアカウントid）は既に存在します」と表示され、tokenは表示されないから、一回目にtokenはコピペしとく
+localhost:8080
+・localhostはコンピュータ自信を指す特別なホスト名
+・IPアドレスに置き換えると127.0.0.1と同じ
+・8080はポート番号
+
+AccountRest.java
+POSTは、@Consumesがいる
+
+GET
+{ここにaccountId入れる}。
+下はtokenだけ
+
+今はまだ何も情報を入れていないから、返ってくるintroduction は null になっている
+AccountRest.java
+
+AccountManager.java
+
+②作ったHashMap（accounts）に、アカウントIDを与えてaccounts.get(accountId)と書くことでそのアカウント情報を取ってくれる
+
+①アカウントIDとそれに対応するアカウント情報（Account）がまとまったHashMapを作成し、accountsに代入
+Account.java
+" />
+  <meta name="author" content="amika uemura" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Nitta Labo Tutorial</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Postman</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Mar 8, 2019</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>amika uemura</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>端末に情報を入力したときに、何が返ってきているのかを可視化するためのツール</p>
+<p><a href="https://www.postman.com/downloads/">PostMan</a></p>
+<p>どうにかして新規登録をすると、下の画面が出てきます<br>
+<img src="http://localhost:1313/images/postman1.png" alt="images">
+<em>↑<span style="color:deeppink">〇を押します</span></em><br>
+.<br>
+.<br>
+<img src="http://localhost:1313/images/postman2.png" alt="images">
+<em>↑<span style="color:deeppink">□を押すと、</span></em><br>
+.<br>
+.<br>
+↓<span style="color:purple">GET POST PUT DELが出てきます</span><br>
+<img src="http://localhost:1313/images/postman3.png" alt="images">
+<em>↑<span style="color:deeppink">POSTを押す</span></em><br>
+.<br>
+.</p>
+<h2 id="post">Post</h2>
+<p>↓<span style="color:deeppink">Bodyを選択</span> <br>
+↓<span style="color:deeppink">x-www-form-urlencodedを選択</span> <br>
+↓<span style="color:deeppink">アカウントとパスワード</span> の <span style="color:purple">KeyとValueを入力するための欄が出てきます</span><br>
+↓<span style="color:purple">Key</span> に <span style="color:green">account_id ,  password</span>と<span style="color:deeppink">入力</span><br>
+↓<span style="color:purple">Value</span> に 自分のつけたいアカウント名とパスワードを<span style="color:deeppink">入力</span><br>
+（これがフォームデータとして <span style="color:deeppink">x-www-form-urlencoded</span> 形式で送信される<br>
+<strong>Intellij起動</strong>して、<br>
+↓<span style="color:deeppink">Sendを押すと</span>
+↓<span style="color:purple">tokenが出てきます</span><br>
+・tokenは登録したアカウント情報をGETするときや、アカウントをDELETEするときに利用する。<br>
+・2回目にpostしたときは、「（入力したアカウントid）は既に存在します」と表示され、tokenは表示されないから、一回目にtokenはコピペしとく<br>
+<strong><span style="color:yellowgreen">localhost:8080</span></strong><br>
+・<strong>localhost</strong>はコンピュータ自信を指す特別なホスト名<br>
+・IPアドレスに置き換えると127.0.0.1と同じ<br>
+・<strong>8080</strong>はポート番号<br>
+<img src="http://localhost:1313/images/postman6.png" alt="images">
+<strong>AccountRest.java</strong><br>
+POSTは、@Consumesがいる
+<img src="http://localhost:1313/images/post1.png" alt="images"></p>
+<h2 id="get">GET</h2>
+<p><span style="color:yellowgreen">{ここに</span><span style="color:green">accountId</span><span style="color:yellowgreen">入れる}。</span><br>
+下は<span style="color:deeppink">token</span>だけ
+<img src="http://localhost:1313/images/postman7.png" alt="images"><br>
+<em>今はまだ何も情報を入れていないから、返ってくる<span style="color:purple">introduction は null</span> になっている</em></p>
+<p><strong>AccountRest.java</strong><br>
+<img src="http://localhost:1313/images/get1.png" alt="images">
+AccountManager.java</p>
+<p><img src="http://localhost:1313/images/amga.png" alt="images"><br>
+<em>②作ったHashMap（accounts）に、アカウントIDを与えてaccounts.get(accountId)と書くことでそのアカウント情報を取ってくれる</em></p>
+<p><img src="http://localhost:1313/images/amhm.png" alt="images"><br>
+<em>①アカウントIDとそれに対応するアカウント情報（Account）がまとまったHashMapを作成し、accountsに代入</em></p>
+<p><strong>Account.java</strong><br>
+<img src="http://localhost:1313/images/aj.png" alt="images"></p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/rich-content/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Intellij</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/androidstudio/"
+      ><span>AndroidStudio</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Nitta Labo Tutorial</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

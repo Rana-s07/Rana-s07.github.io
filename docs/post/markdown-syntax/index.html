@@ -1,0 +1,518 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Swagger - Nitta Labo Tutorial</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="コードを書く前に、何のデータをどんな形で送るのか、アカウントがなかったらどのようなエラーを出すか（404？401？)を決めてここに記し、コードを書くときにはSwaggerを見ながら書きます。
+
+📚 参考サイト
+
+
+swagger editor
+以下は19thのシトラスプロジェクトのSwagger editor(左)とSwagger UI(右)です。
+Try our new Editorを押して、左のコードを全部消し、下の画像や次の説明をコピペしながら、UIと比べて理解していきましょう。
+
+
+
+
+
+右のSwagger UIと照らして見ていくと、、
+
+openapi: 3.0.3
+
+info:
+  title: Citrus - OpenAPI 3.0  
+  version: 1.0.0 
+
+  description: |-  # Swaggerを書くときに、accountチームとbookチームに分けたので、bookチーム分担１などと書いてあります。
+    bookチーム-分担1とか  
+🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。
+🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。
+
+
+tags:
+  - name: accounts
+    description: 全アカウントの情報  # 詳しい説明を書きましょう
+🌷タグの名前をaccountsとします📖
+
+
+components:
+  parameters:  # {account_id}のようなものがパスパラメータ
+    account_id:
+      in: path
+      name: account_id
+      description: 取得対象のユーザーID
+      schema:
+        type: string
+      required: true # 必須という意味
+🌷{account_id}は後で何回も出てくるので、これパスパラメーターだよーとか、取得対象のユーザーidなんだよーとか、必須項目だよとかここに先に書いておきます。
+🌷後で「- $ref: &ldquo;#/components/parameters/account_id&rdquo;」と書いたら、{account_id}を使えます。
+
+
+paths:
+  /accounts:
+    get:
+      tags:  # accountsタグの中のお話📖  
+        - accounts
+      summary: アカウントの一覧を返す  # 説明を書きましょう。
+      description: アカウントの一覧をリストとして返す  # 詳しい説明を書きましょう
+      responses:
+        &#39;200&#39;:  # 成功
+          description: 成功
+          content:
+            application/json:  # JSON形式で返す
+              schema:
+                type: array  # 配列
+                items:
+                  type: string  # 文字列
+                  example: id1
+🌷/accountsというパスに対してGETをすると、成功だった場合（200)、アカウントの一覧をリストとしてJSON形式で返すことが書かれています。
+🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。" />
+  <meta name="author" content="amika" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.1">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >Nitta Labo Tutorial</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">Swagger</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 28, 2024</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>amika</span>
+      
+    </div>
+    
+  </header>
+
+  <section><p>コードを書く前に、何のデータをどんな形で送るのか、アカウントがなかったらどのようなエラーを出すか（404？401？)を決めてここに記し、コードを書くときにはSwaggerを見ながら書きます。</p>
+<blockquote>
+<p>📚 <a href="https://techblog.asahi-net.co.jp/entry/2019/03/04/102734">参考サイト</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://editor.swagger.io/">swagger editor</a><br>
+以下は19thのシトラスプロジェクトのSwagger editor(左)とSwagger UI(右)です。<br>
+Try our new Editorを押して、左のコードを全部消し、下の画像や次の説明をコピペしながら、UIと比べて理解していきましょう。</p>
+</blockquote>
+<blockquote>
+<p><img src="http://localhost:1313/images/swagger6.png" alt="images"></p>
+</blockquote>
+<hr>
+<p>右のSwagger UIと照らして見ていくと、、</p>
+<p><img src="http://localhost:1313/images/info.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">info</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">title</span>: <span style="color:#ae81ff">Citrus - OpenAPI 3.0  </span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">version</span>: <span style="color:#ae81ff">1.0.0</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">|- </span> <span style="color:#75715e"># Swaggerを書くときに、accountチームとbookチームに分けたので、bookチーム分担１などと書いてあります。</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">bookチーム-分担1とか  </span>
+</span></span></code></pre></div><p>🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。<br>
+🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</p>
+<hr>
+<p><img src="http://localhost:1313/images/tags.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tags</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">全アカウントの情報 </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span></code></pre></div><p>🌷タグの名前をaccountsとします📖</p>
+<hr>
+<p><img src="http://localhost:1313/images/required.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">components</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">parameters</span>:  <span style="color:#75715e"># {account_id}のようなものがパスパラメータ</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">account_id</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">in</span>: <span style="color:#ae81ff">path</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">account_id</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">取得対象のユーザーID</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># 必須という意味</span>
+</span></span></code></pre></div><p>🌷{account_id}は後で何回も出てくるので、これパスパラメーターだよーとか、取得対象のユーザーidなんだよーとか、必須項目だよとかここに先に書いておきます。<br>
+🌷後で「- $ref: &ldquo;#/components/parameters/account_id&rdquo;」と書いたら、{account_id}を使えます。</p>
+<hr>
+<p><img src="http://localhost:1313/images/swagger1.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">paths</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">/accounts</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">get</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:  <span style="color:#75715e"># accountsタグの中のお話📖  </span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">アカウントの一覧を返す </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">アカウントの一覧をリストとして返す </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;200&#39;</span>:  <span style="color:#75715e"># 成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">application/json</span>:  <span style="color:#75715e"># JSON形式で返す</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">type</span>: <span style="color:#ae81ff">array </span> <span style="color:#75715e"># 配列</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">items</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string </span> <span style="color:#75715e"># 文字列</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">example</span>: <span style="color:#ae81ff">id1</span>
+</span></span></code></pre></div><p>🌷/accountsというパスに対してGETをすると、成功だった場合（200)、アカウントの一覧をリストとしてJSON形式で返すことが書かれています。<br>
+🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。</p>
+<hr>
+<p><img src="http://localhost:1313/images/swagger2.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">post</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:  <span style="color:#75715e"># accountsタグの中のお話📖  </span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">アカウントの新規作成 </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">account_idとpasswordを設定し新しいアカウントを作成する </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">requestBody</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># repuestBodyは必須項目</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">application/x-www-form-urlencoded</span>:  <span style="color:#75715e"># この形式でaccount_idとpasswordが登録される。</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object </span> <span style="color:#75715e"># object型データとはkeyとvalueで構成されるデータ。</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">account_id</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">アカウント名</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">password</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">required</span>:  <span style="color:#75715e"># 必須項目</span>
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">account_id</span>
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;200&#39;</span>:  <span style="color:#75715e"># 成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">成功</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;409&#39;</span>:  <span style="color:#75715e"># 競合</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">すでにaccount_idが存在したとき</span>
+</span></span></code></pre></div><p>🌷/accountsというパスに対してPOSTをすると、成功だった場合（200)、x-www-form-urlencoded形式で、account_idとpasswordが keyとvalueで構成されるobject型データで登録されることが書かれています。 <br>
+🌷object型データ</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">例 </span>: 
+</span></span><span style="display:flex;"><span>{  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;key&#34;</span>        :  <span style="color:#e6db74">&#34;value&#34;</span>,  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;account_id&#34;</span> :  <span style="color:#e6db74">&#34;nitta217lab&#34;</span>,  
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;password&#34;</span>   :  <span style="color:#e6db74">&#34;13nitta217&#34;</span>  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><hr>
+<p><img src="http://localhost:1313/images/swagger3.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">/accounts/{account_id}:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">get</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:  <span style="color:#75715e"># accountsタグの中のお話📖  </span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">アカウント情報を返す(idとpassword) </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">指定されたアカウントの情報を返す </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">parameters</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/parameters/account_id&#34;</span>  <span style="color:#75715e"># 初めに書いておいたパスパラメータのaccount_id</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">in</span>: <span style="color:#ae81ff">query </span> <span style="color:#75715e"># passwordはqueryParameter</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>  <span style="color:#75715e"># パスワードは必須項目</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;200&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">成功</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">application/json</span>:  <span style="color:#75715e"># JSON形式で返す</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span> <span style="color:#75715e"># object型データ</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">account_id</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">アカウントID</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">example</span>: <span style="color:#ae81ff">amika</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">password</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">example</span>: <span style="color:#ae81ff">abc123</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;401&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード間違い          </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;404&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">IDが存在しません</span>
+</span></span></code></pre></div><p>🌷queryParameterは、リソースを絞り込むま条件や追加情報をURLで指定するための方法<br>
+🌷 id,pass<br>
+🌷/accounts{account_id}というパスに対してGETをすると、成功だった場合（200)、指定されたアカウントの情報（account_idとpassword）をJSON形式で返すことが書かれています。<br>
+🌷schemaには返すデータの例がString（文字列）とarray（配列）を用いて表現されています。</p>
+<hr>
+<p><img src="http://localhost:1313/images/swagger5.png" alt="images"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#ae81ff">/accounts/{account_id}/password:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">put</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">tags</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">accounts</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">summary</span>: <span style="color:#ae81ff">パスワードを変更する </span> <span style="color:#75715e"># 説明を書きましょう。</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">description</span>: <span style="color:#ae81ff">指定されたIDのアカウントを変更する </span> <span style="color:#75715e"># 詳しい説明を書きましょう</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">parameters</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/parameters/account_id&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">requestBody</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">required</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">content</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">application/x-www-form-urlencoded</span>: <span style="color:#75715e"># この形式のデータを使ってパスワードを変更</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">schema</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">type</span>: <span style="color:#ae81ff">object</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">properties</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">password</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">変更前のパスワード</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">new_password</span>:
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">description</span>: <span style="color:#ae81ff">新しいパスワード</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">required</span>:
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">password</span>
+</span></span><span style="display:flex;"><span>                - <span style="color:#ae81ff">new_password   </span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">responses</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#39;401&#39;</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">description</span>: <span style="color:#ae81ff">パスワード間違い</span>
+</span></span></code></pre></div><p>以上でswaggerは終わり🎉</p>
+<p>次はIntellij ideaでバックエンドのコードを書いていくよ！</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/placeholder-text/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Figma</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/rich-content/"
+      ><span>Intellij</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Nitta Labo Tutorial</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>
