@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Paper</title>
+    <title>Posts on 新田研究室 アプリ開発チュートリアル（ここをクリックでホームへ）</title>
     <link>https://Rana-s07.github.io/post/</link>
-    <description>Recent content in Posts on Paper</description>
+    <description>Recent content in Posts on 新田研究室 アプリ開発チュートリアル（ここをクリックでホームへ）</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024, lee.so</copyright>
@@ -14,12 +14,15 @@
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/figma/</guid>
-      <description>📖 これからやること
- アカウント登録（サインアップ）、パスワード変更、アカウント一覧表示ができるAndroidアプリをUI（画面）作成からフロンドエンドまで作成し、実際にアプリを動かしてもらいます 20thの皆様へ、卒論のデータに用いるため、これから学習をする際の学習時間を計っていただきたいです。ご協力よろしくお願い致します。  📚 Sign in figma  ↑ここからサインアップとサインインをしてください  🌞 Figmaとは？  チームで画面デザイン（UI）を決めていくときに便利なWebサービスです チームで使うときは、複数人で同時作業もできます チームで開発するときにこの画面を見返すことによってどんなレイアウトだったか一目で確認することができます  🌞 新しいデザインファイルを作成しよう  今からこのようなデザインの画面を作ります。↓   準備. ログイン後、この画面が表示された場合ブラウザの←ボタンを押してください
- Drafts（下書き） → +マーク（New file） → Design の順にクリック   🌷 新しいデザインファイル作成完了！↓
-🌞 メモアプリの画面デザインを作成しよう 🖊 フレームを作成して準備をしよう  格子マークをクリック   Frameの種類が出てきます   1番上の「Android Compact」をクリック   Android端末に一番近いサイズなので、選択しましょう
-🌷 フレーム作成完了！  ⭐ 操作ポイント  「ctrl+D」を押すと複製される 「ctrl+Z」を押すと1つ前に戻る  🖊 タイトルを作成しよう  Tマーク（Text）をクリックし、画像のように青色の枠を配置
- 青色の枠に「メモアプリ」と入力</description>
+      <description>🌞Figmaとは？  アプリの画面の見た目（UI）を作るためのWebツールです。 ボタンの位置や文字の配置などを、実際の画面のように作成できます。 複数人で同じ画面を見ながら、同時に作業することもできます。 実際にコードを書く前に「どんな画面にするか」を下書きを作成するために使います。   🌞新しいデザインファイルを作成しよう  今からこのようなメモアプリのモアプリの画面デザインを作成します。↓
+  🖊 準備をしよう  リンクをクリックし、Figmaのアカウントを作成してログインしてください。
+→📚 Sign in figma
+ ログイン後、この画面が表示された場合ブラウザの←ボタンをクリックしてください。↓
+ Drafts（下書き） → +マーク（New file） → Design の順にクリックしてください。↓   🌷 新しいデザインファイル作成完了！↓
+ 🌞メモアプリの画面デザインを作成しよう 🖊 フレーム（画面）を作成して準備をしよう  格子マークをクリックしてください。↓   フレームの種類が出てきます。   1番上の「Android Compact」をクリックしてください。↓   フレーム（画面）のサイズがAndroid端末に最も近いサイズになります。
+  🌷 フレーム作成完了！
+ ⭐ 操作ポイント ⭐  「ctrl+D」を押すと複製される 「ctrl+Z」を押すと1つ前に戻る UIパーツを選択すると、周りに青い枠が表示される   🖊 テキストを挿入しよう  Tマーク（Text）をクリックし、画像のように青色の枠を配置して「メモアプリ」と入力してください。↓
+ Thpography（画像の印）をクリックしてください。↓    テキストサイズを変更できます。</description>
     </item>
     
     <item>
@@ -28,18 +31,12 @@
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/swagger/</guid>
-      <description>Swagger 環境
-・API version：OpenAPI 3.0.0
-・API表示ツール：Swagger UI
-・API編集ツール：Swagger Editor
- 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
-🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
-🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
-🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
-たとえば：
- 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
- GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
-※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です</description>
+      <description>🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。 バックエンドとフロントエンドの共通ルールを決める役割があります。
+   🌞 Swaggerを使う準備をしよう 🖊 Swagger Editorを開こう 下のリンクをクリックしてください
+→📚 Swagger Editor
+ 左：Swagger editor → 設定を書く場所。コードで確認。 右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。    🌞 APIの基本構造を理解しよう 🖊 パスとは何かを知ろう  パスはサーバー上のデータや機能の住所のようなものです。  例：
+ パス：/memo 意味：「メモのデータがある場所」  アプリやブラウザは、この住所を指定して「この場所の情報をください」とサーバーにリクエストします。
+ 🖊 操作の種類（HTTPメソッド）を知ろう  パスは「操作の種類」と組み合わせて使います。     メソッド 意味     GET データを取得する（見るだけ）   POST 新しいデータを作る   PUT データを更新する（書き換える）   DELETE データを削除する    ※ 今回使用するのは GET と PUT です。</description>
     </item>
     
     <item>
@@ -48,22 +45,14 @@
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/intellij_idea/</guid>
-      <description>Intellij IDEA 環境
-・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）
-・ビルド番号: IU-242.23339.11
-・Runtime（Java）: Java 21.0.4
-・Ultimate （学生および教職員向けの個人ライセンス）を使用
- 🌞 アプリ開発における構成 🌷 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。
+      <description>🌞 IntelliJ IDEAとは？  IntelliJ IDEAは、 Javaを使ったアプリやサーバーを開発するための開発ツール（IDE） です。 この章では、Swaggerで設計したAPIをもとに、 実際に動くサーバー（バックエンド） を作成します。 ここで作ったサーバーに、あとからAndroidアプリが通信します。   🌞 サーバー構成を理解しよう（アプリ開発における構成） 🖊 新田研究室での基本構成 🌷 新田研のプロジェクトでは、役割ごとに 3つのpackage を作って開発を進めます。
  entities
 データの形を定義する repositories
-データを保存・取得する resources
-外部との窓口（API）
-  🌷それぞれのpackageの中に、対応するJavaファイルを作成します。
-例）19th　シトラスプロジェクト↓ 🌞 MemoServerを作っていきましょう！   IntelliJ IDEAのバージョン
-この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。以降の画像はこのバージョンを基準にしているため、別のバージョンを使用している場合、表示や操作手順が一部異なることがあるため注意してください。
-  他のプロジェクトを開いている場合
-ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。   🖊 Project作ります  NewProjectをクリック  設定を変更して、Nextをクリック ➀ 左の Spring Boot を選択
-② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&amp;quot;23.</description>
+データを保存・取得する処理を書く resources
+外部とやりとりする窓口（API）
+  それぞれのpackageの中に、対応するJavaファイルを作成します。
+例）19th　シトラスプロジェクト↓  🌞 MemoServerを作ろう！ 🖊 使用するIntelliJ IDEAのバージョン  この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。 バージョンが異なる場合、表示や操作手順が一部異なることがあります。  🖊 他のプロジェクトを閉じよう（開いている場合）  左上のハンバーガーメニュー（≡）をクリックしてください。 File → Close Project をクリックしてください。↓
+   🖊 新しいProjectを作成しよう  NewProject をクリックしてください。↓  以下の設定を行い、Nextをクリックしてください。   左の Spring Boot を選択 Name は 「MemoServer」に変更 JDK は「openjdk-23 (java version&amp;quot;23.</description>
     </item>
     
     <item>

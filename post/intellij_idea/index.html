@@ -47,7 +47,7 @@
   />
 
   
-  <title>Intellij IDEA  ⏰約20分  - Paper</title>
+  <title>Intellij IDEA  ⏰約20分  - 新田研究室 アプリ開発チュートリアル（ここをクリックでホームへ）</title>
 
   
   <meta name="theme-color" />
@@ -56,22 +56,14 @@
   
   
   
-  <meta name="description" content="Intellij IDEA 環境
-・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）
-・ビルド番号: IU-242.23339.11
-・Runtime（Java）: Java 21.0.4
-・Ultimate （学生および教職員向けの個人ライセンス）を使用
- 🌞 アプリ開発における構成 🌷 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。
+  <meta name="description" content="🌞 IntelliJ IDEAとは？  IntelliJ IDEAは、 Javaを使ったアプリやサーバーを開発するための開発ツール（IDE） です。 この章では、Swaggerで設計したAPIをもとに、 実際に動くサーバー（バックエンド） を作成します。 ここで作ったサーバーに、あとからAndroidアプリが通信します。   🌞 サーバー構成を理解しよう（アプリ開発における構成） 🖊 新田研究室での基本構成 🌷 新田研のプロジェクトでは、役割ごとに 3つのpackage を作って開発を進めます。
  entities
 データの形を定義する repositories
-データを保存・取得する resources
-外部との窓口（API）
-  🌷それぞれのpackageの中に、対応するJavaファイルを作成します。
-例）19th　シトラスプロジェクト↓ 🌞 MemoServerを作っていきましょう！   IntelliJ IDEAのバージョン
-この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。以降の画像はこのバージョンを基準にしているため、別のバージョンを使用している場合、表示や操作手順が一部異なることがあるため注意してください。
-  他のプロジェクトを開いている場合
-ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。   🖊 Project作ります  NewProjectをクリック  設定を変更して、Nextをクリック ➀ 左の Spring Boot を選択
-② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&quot;23." />
+データを保存・取得する処理を書く resources
+外部とやりとりする窓口（API）
+  それぞれのpackageの中に、対応するJavaファイルを作成します。
+例）19th　シトラスプロジェクト↓  🌞 MemoServerを作ろう！ 🖊 使用するIntelliJ IDEAのバージョン  この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。 バージョンが異なる場合、表示や操作手順が一部異なることがあります。  🖊 他のプロジェクトを閉じよう（開いている場合）  左上のハンバーガーメニュー（≡）をクリックしてください。 File → Close Project をクリックしてください。↓
+   🖊 新しいProjectを作成しよう  NewProject をクリックしてください。↓  以下の設定を行い、Nextをクリックしてください。   左の Spring Boot を選択 Name は 「MemoServer」に変更 JDK は「openjdk-23 (java version&quot;23." />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -134,7 +126,7 @@
   <meta itemprop="name" content="Intellij IDEA  ⏰約20分 ">
 <meta itemprop="description" content="ここはどこに表示されているのだろう"><meta itemprop="datePublished" content="2024-12-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-12-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="330">
+<meta itemprop="wordCount" content="370">
 <meta itemprop="keywords" content="" />
   
   <meta property="og:title" content="Intellij IDEA  ⏰約20分 " />
@@ -163,7 +155,7 @@
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
     <a class="-translate-y-[1px] text-2xl font-medium" href="https://Rana-s07.github.io/"
-      >Paper</a
+      >新田研究室 アプリ開発チュートリアル（ここをクリックでホームへ）</a
     >
     <div
       class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
@@ -274,113 +266,124 @@
     
   </header>
 
-  <section><hr>
-<p>Intellij IDEA 環境<br>
-・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）<br>
-・ビルド番号: IU-242.23339.11<br>
-・Runtime（Java）: Java 21.0.4<br>
-・Ultimate （学生および教職員向けの個人ライセンス）を使用</p>
+  <section><h2 id="-intellij-ideaとは">🌞 IntelliJ IDEAとは？</h2>
+<ul>
+<li>IntelliJ IDEAは、 <strong>Javaを使ったアプリやサーバーを開発するための開発ツール（IDE）</strong> です。</li>
+<li>この章では、Swaggerで設計したAPIをもとに、 <strong>実際に動くサーバー（バックエンド）</strong> を作成します。</li>
+<li>ここで作ったサーバーに、あとからAndroidアプリが通信します。</li>
+</ul>
 <hr>
-<h2 id="-アプリ開発における構成">🌞 <strong>アプリ開発における構成</strong></h2>
-<p>🌷 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。</p>
+<h2 id="-サーバー構成を理解しようアプリ開発における構成">🌞 <strong>サーバー構成を理解しよう（アプリ開発における構成）</strong></h2>
+<h3 id="-新田研究室での基本構成">🖊 新田研究室での基本構成</h3>
+<p>🌷 新田研のプロジェクトでは、役割ごとに <strong>3つのpackage</strong> を作って開発を進めます。</p>
 <ul>
 <li><strong>entities</strong><br>
 データの形を定義する</li>
 <li><strong>repositories</strong><br>
-データを保存・取得する</li>
+データを保存・取得する処理を書く</li>
 <li><strong>resources</strong><br>
-外部との窓口（API）<br>
+外部とやりとりする窓口（API）<br>
 <br></li>
 </ul>
-<p>🌷それぞれのpackageの中に、対応するJavaファイルを作成します。<br>
+<p>それぞれのpackageの中に、対応するJavaファイルを作成します。<br>
 例）19th　シトラスプロジェクト↓
 <img src="/images/in.png" alt="images"></p>
-<h2 id="-memoserverを作っていきましょう">🌞 <strong>MemoServerを作っていきましょう！</strong></h2>
+<hr>
+<h2 id="-memoserverを作ろう">🌞 <strong>MemoServerを作ろう！</strong></h2>
+<h3 id="-使用するintellij-ideaのバージョン">🖊 使用するIntelliJ IDEAのバージョン</h3>
 <ul>
-<li>
-<p><strong>IntelliJ IDEAのバージョン</strong><br>
-この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。以降の画像はこのバージョンを基準にしているため、別のバージョンを使用している場合、表示や操作手順が一部異なることがあるため注意してください。</p>
-</li>
-<li>
-<p><strong>他のプロジェクトを開いている場合</strong><br>
-ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。
-<img src="/images/Intellij_close.png" alt="images"></p>
-</li>
+<li>この教材では <strong>IntelliJ IDEA 2024.1（Ultimate Edition）</strong> を使って説明します。</li>
+<li>バージョンが異なる場合、表示や操作手順が一部異なることがあります。</li>
 </ul>
-<h2 id="-project作ります">🖊 Project作ります</h2>
+<h3 id="-他のプロジェクトを閉じよう開いている場合">🖊 他のプロジェクトを閉じよう（開いている場合）</h3>
 <ol>
-<li>NewProjectをクリック
+<li>左上のハンバーガーメニュー（≡）をクリックしてください。</li>
+<li>File → Close Project をクリックしてください。↓<br>
+<img src="/images/Intellij_close.png" alt="images"></li>
+</ol>
+<hr>
+<h3 id="-新しいprojectを作成しよう">🖊 新しいProjectを作成しよう</h3>
+<ol>
+<li><strong>NewProject</strong> をクリックしてください。↓
 <img src="/images/Intellij_new.png" alt="images"></li>
-<li>設定を変更して、Nextをクリック
-➀ 左の Spring Boot を選択<br>
-② Name は 「MemoServer」に変更 <br>
-③ JDK は「openjdk-23 (java version&quot;23.0.1&quot;)」を選択 <br>
-※openjdk-23 (java version&quot;ここは全く同じにしなくてもOK&quot;)
+<li>以下の設定を行い、Nextをクリックしてください。</li>
+</ol>
+<ul>
+<li>左の Spring Boot を選択</li>
+<li>Name は 「MemoServer」に変更</li>
+<li>JDK は「openjdk-23 (java version&quot;23.0.1&quot;)」を選択 <br>
+※java version23以降の.0.1は完全一致しなくてもOK&quot; ↓
 <img src="/images/Intellij_new2.png" alt="images"></li>
-<li>Webをクリック、Jersey を選択し、Createクリック
+</ul>
+<ol start="3">
+<li>Webをクリック、<strong>Jersey</strong> を選択してCreateクリックしてください。↓
 <img src="/images/Intellij_new3.png" alt="images"></li>
-<li>Gradleのimportが終わるまで待ちましょう
+<li>Gradleのimportが終わるまで待ちます。↓
 <img src="/images/Intellij_new4.png" alt="images">
 🌷 <strong>Project「MemoServer」の作成完了！</strong></li>
 </ol>
-<h2 id="-memoserverに3つのpackageを作ります">🖊 MemoServerに3つのPackageを作ります</h2>
+<hr>
+<h2 id="-サーバーのフォルダ構成を作ろう">🌞 <strong>サーバーのフォルダ構成を作ろう</strong></h2>
+<h3 id="-3つのpackageを作成しよう">🖊 3つのPackageを作成しよう</h3>
 <ol>
-<li>➀MemoServer → ②src → ③main → ④java の順にクリック<br>
+<li>➀MemoServer → ②src → ③main → ④java の順にクリックしてください。↓<br>
 <img src="/images/Intellij_package.png" alt="images"></li>
-<li>com.example.memoserver を右クリック</li>
-<li>➀New → ②package の順にクリック<br>
+<li>com.example.memoserver を右クリックしてください。</li>
+<li>➀New → ②package の順にクリックしてください。↓<br>
 <img src="/images/Intellij_package2.png" alt="images"></li>
-<li>com.example.memoserverの続きに「entities」を入力してEnter<br>
+<li>com.example.memoserverの続きに「entities」を入力してEnterしてください。↓<br>
 <img src="/images/Intellij_package3.png" alt="images">
 <img src="/images/Intellij_package4.png" alt="images">
 🌷 <strong>「entities package」の作成完了！</strong></li>
-<li>同様に「repositories」「resources」packageを作成して下さい
+<li>同様に「repositories」「resources」packageを作成してください。↓
 <img src="/images/Intellij_package_final.png" alt="images">
-🌷 <strong>「repositories package」「resources package」の作成完了！</strong></li>
+🌷 <strong>3つのpackageの作成完了！</strong></li>
 </ol>
-<h2 id="-それぞれのpackageの中にjava-classを作ります">🖊 それぞれのPackageの中にJava Classを作ります</h2>
+<hr>
+<h3 id="-java-classを作成しよう">🖊 Java Classを作成しよう</h3>
 <ul>
-<li>entitiesの中には「Memo.java」を作ります</li>
+<li><strong>entities</strong> の中に <strong>Memo.java</strong> を作成します。</li>
 </ul>
 <ol>
-<li>entities を右クリック</li>
-<li>➀New → ②Java Class の順にクリック<br>
+<li>entities を右クリックしてください。</li>
+<li>➀New → ②Java Class の順にクリックしてください。↓<br>
 <img src="/images/Intellij_javaclass.png" alt="images"></li>
-<li>「Memo」を入力してEnter<br>
+<li>「Memo」を入力してEnterしてください。↓<br>
 <img src="/images/Intellij_javaclass2.png" alt="images">
 <img src="/images/Intellij_javaclass3.png" alt="images">
 🌷 <strong>「Memo.java」の作成完了!</strong></li>
 </ol>
-<ul>
-<li>repositoriesの中には「MemoRepository.java」を作ります</li>
-<li>resourcesの中には「MemoResource.java」を作ります</li>
-</ul>
+<br> 
 <ol start="4">
-<li>Memo.javaと同様に「MemoRepository.java」と「MemoResource.java」を作成してください<br>
+<li>Memo.javaと同様に<br>
+<strong>repositories</strong> の中に <strong>MemoRepository.java</strong><br>
+<strong>resources</strong> の中に <strong>MemoResource.java</strong> を作成してください。↓<br>
 <img src="/images/Intellij_javaclass_final.png" alt="images">
-🌷 <strong>「MemoRepository.java」「MemoResource.java」の作成完了!</strong></li>
+🌷 <strong>Java Class作成完了!</strong></li>
 </ol>
-<h2 id="-jerseyconfigjavaを作ります">🖊 JerseyConfig.javaを作ります</h2>
+<hr>
+<h2 id="-サーバーの設定ファイルを作ろう">🌞 <strong>サーバーの設定ファイルを作ろう</strong></h2>
+<h3 id="-jerseyconfigjavaを作成しよう">🖊 JerseyConfig.javaを作成しよう</h3>
 <ul>
 <li><strong>JerseyConfigとは&hellip;</strong><br>
-Jersey に「どのクラスを API として使うか」を教えるための設定クラスです。
+<strong>どのクラスをAPIとして使うかを設定するクラス</strong> です。<br>
 この設定がないと、@Path を付けたクラスは API として動きません。</li>
-<li>Pacakegeと同じ位置に作ります</li>
 </ul>
+<br>
 <ol>
-<li>com.example.memoserver を右クリック</li>
-<li>➀New → ②Java Class の順にクリック<br>
+<li>com.example.memoserver を右クリックしてください。</li>
+<li>➀New → ②Java Class の順にクリックしてください。↓  <br>
 <img src="/images/Intellij_config.png" alt="images"></li>
-<li>「JerseyConfig」を入力してEnter
+<li>「JerseyConfig」を入力してEnterしてください。↓<br>
 <img src="/images/Intellij_config2.png" alt="images">
 <img src="/images/Intellij_config_final.png" alt="images">
-🌷 <strong>「JerseyConfig.java」の作成完了!</strong></li>
+🌷 <strong>JerseyConfig.javaの作成完了!</strong></li>
 </ol>
-<h2 id="-コードを書きます">🖊 コードを書きます</h2>
-<ul>
-<li>それぞれのコードをコピペしてください</li>
-</ul>
-<p><strong>JerseyConfig ↓</strong></p>
+<hr>
+<h2 id="-バックエンドの処理を書こう">🌞 <strong>バックエンドの処理を書こう</strong></h2>
+<h3 id="-コードを書こう">🖊 コードを書こう</h3>
+<p>以下のコードを、それぞれのファイルに <strong>コピー＆ペースト</strong>してください。</p>
+<p><code>JerseyConfig</code> ↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.memoserver<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> org.glassfish.jersey.server.ResourceConfig<span style="color:#f92672">;</span>
@@ -393,7 +396,7 @@ Jersey に「どのクラスを API として使うか」を教えるための�
         packages<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.example.MemoServer.resources&#34;</span><span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p><strong>Memo ↓</strong></p>
+</code></pre></div><p><code>Memo </code>↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.memoserver.entities<span style="color:#f92672">;</span>
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Memo</span> <span style="color:#f92672">{</span>
@@ -408,7 +411,7 @@ Jersey に「どのクラスを API として使うか」を教えるための�
     <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getText</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> text<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>String text<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> text<span style="color:#f92672">;</span> <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p><strong>MemoRepository ↓</strong></p>
+</code></pre></div><p><code>MemoRepository </code>↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.memoserver.repositories<span style="color:#f92672">;</span>
 
 
@@ -427,7 +430,7 @@ Jersey に「どのクラスを API として使うか」を教えるための�
         <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">memo</span> <span style="color:#f92672">=</span> newMemo<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p><strong>Memo Resource ↓</strong></p>
+</code></pre></div><p><code>Memo Resource </code>↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.memoserver.resources<span style="color:#f92672">;</span>
 
 <span style="color:#f92672">import</span> com.example.memoserver.entities.Memo<span style="color:#f92672">;</span>
@@ -472,30 +475,46 @@ Jersey に「どのクラスを API として使うか」を教えるための�
         memoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">setMemo</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Memo<span style="color:#f92672">(</span>text<span style="color:#f92672">));</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h2 id="-実行してみましょう">🖊 実行してみましょう</h2>
+</code></pre></div><hr>
+<h2 id="-サーバーを起動して確認しよう">🌞 <strong>サーバーを起動して確認しよう</strong></h2>
+<h3 id="-gradleを更新しよう">🖊 Gradleを更新しよう</h3>
 <ul>
-<li>実行する前にGradleを更新します<br>
-実行前にGradleを更新するのは、プロジェクトを正しく動かすための準備を整えるためです。Gradleが古いままだと、コードが正しくてもエラーになります。</li>
+<li>実行前にGradleを更新します。</li>
+<li>更新しないと、正しいコードでもエラーが出ることがあります。</li>
 </ul>
 <ol>
-<li>象のマーク🐘をクリック</li>
-<li>更新マーク🔄をクリック
+<li>象のマーク🐘をクリックしてください。</li>
+<li>更新ボタン🔄をクリックしてください。↓
 <img src="/images/Intellij_gradle.png" alt="images">
-🌷 <strong>Gradleの更新完了</strong>
-<br></li>
+🌷 <strong>Gradleの更新完了!</strong></li>
 </ol>
-<ul>
-<li>実行します</li>
-</ul>
+<hr>
+<h3 id="-実行してみよう">🖊 実行してみよう</h3>
 <ol>
-<li>実行ボタンをクリック
+<li>実行ボタンをクリックしてください。↓<br>
 <img src="/images/Intellij_run.png" alt="images"></li>
-<li>画像の用にspringが出たら成功
+<li>ログにspringが表示されたら成功です。↓<br>
 <img src="/images/Intellij_final.png" alt="images">
-以上でIntellij ideaは終わり🎉</li>
+🌷 <strong>サーバー起動成功!</strong></li>
 </ol>
-<p>3/5終わったよ🎊  何分かかかったかな？  休憩してね☕</p>
-<p>次はこのコードが動いているかPostmanで試していくよ！</p>
+<hr>
+<h2 id="-まとめ">🌞 <strong>まとめ</strong></h2>
+<ul>
+<li>IntelliJ IDEAでバックエンド（サーバー）を作成しました。</li>
+<li>Swaggerで設計したAPIを、実際のコードとして実装しました。
+<br>
+<br>
+以上でIntellij ideaは終わり🎉<br>
+3/5終わったよ🎊  何分かかかったかな？  休憩してね☕<br>
+次はこのコードが動いているかPostmanで試していくよ！</li>
+</ul>
+<hr>
+<p>Intellij IDEA 環境<br>
+・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）<br>
+・ビルド番号: IU-242.23339.11<br>
+・Runtime（Java）: Java 21.0.4<br>
+・Ultimate （学生および教職員向けの個人ライセンス）を使用</p>
+<hr>
 </section>
 
   

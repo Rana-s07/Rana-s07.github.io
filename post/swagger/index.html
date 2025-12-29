@@ -47,7 +47,7 @@
   />
 
   
-  <title>Swagger  ⏰約20分 - Paper</title>
+  <title>Swagger  ⏰約20分 - 新田研究室 アプリ開発チュートリアル（ここをクリックでホームへ）</title>
 
   
   <meta name="theme-color" />
@@ -56,18 +56,12 @@
   
   
   
-  <meta name="description" content="Swagger 環境
-・API version：OpenAPI 3.0.0
-・API表示ツール：Swagger UI
-・API編集ツール：Swagger Editor
- 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
-🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
-🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
-🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
-たとえば：
- 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
- GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
-※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です" />
+  <meta name="description" content="🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。 バックエンドとフロントエンドの共通ルールを決める役割があります。
+   🌞 Swaggerを使う準備をしよう 🖊 Swagger Editorを開こう 下のリンクをクリックしてください
+→📚 Swagger Editor
+ 左：Swagger editor → 設定を書く場所。コードで確認。 右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。    🌞 APIの基本構造を理解しよう 🖊 パスとは何かを知ろう  パスはサーバー上のデータや機能の住所のようなものです。  例：
+ パス：/memo 意味：「メモのデータがある場所」  アプリやブラウザは、この住所を指定して「この場所の情報をください」とサーバーにリクエストします。
+ 🖊 操作の種類（HTTPメソッド）を知ろう  パスは「操作の種類」と組み合わせて使います。     メソッド 意味     GET データを取得する（見るだけ）   POST 新しいデータを作る   PUT データを更新する（書き換える）   DELETE データを削除する    ※ 今回使用するのは GET と PUT です。" />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -128,35 +122,23 @@
   
   
   <meta itemprop="name" content="Swagger  ⏰約20分">
-<meta itemprop="description" content="Swagger 環境
-・API version：OpenAPI 3.0.0
-・API表示ツール：Swagger UI
-・API編集ツール：Swagger Editor
- 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
-🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
-🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
-🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
-たとえば：
- 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
- GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
-※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です"><meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00" />
+<meta itemprop="description" content="🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。 バックエンドとフロントエンドの共通ルールを決める役割があります。
+   🌞 Swaggerを使う準備をしよう 🖊 Swagger Editorを開こう 下のリンクをクリックしてください
+→📚 Swagger Editor
+ 左：Swagger editor → 設定を書く場所。コードで確認。 右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。    🌞 APIの基本構造を理解しよう 🖊 パスとは何かを知ろう  パスはサーバー上のデータや機能の住所のようなものです。  例：
+ パス：/memo 意味：「メモのデータがある場所」  アプリやブラウザは、この住所を指定して「この場所の情報をください」とサーバーにリクエストします。
+ 🖊 操作の種類（HTTPメソッド）を知ろう  パスは「操作の種類」と組み合わせて使います。     メソッド 意味     GET データを取得する（見るだけ）   POST 新しいデータを作る   PUT データを更新する（書き換える）   DELETE データを削除する    ※ 今回使用するのは GET と PUT です。"><meta itemprop="datePublished" content="2024-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="334">
+<meta itemprop="wordCount" content="331">
 <meta itemprop="keywords" content="" />
   
   <meta property="og:title" content="Swagger  ⏰約20分" />
-<meta property="og:description" content="Swagger 環境
-・API version：OpenAPI 3.0.0
-・API表示ツール：Swagger UI
-・API編集ツール：Swagger Editor
- 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
-🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
-🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
-🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
-たとえば：
- 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
- GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
-※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です" />
+<meta property="og:description" content="🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。 バックエンドとフロントエンドの共通ルールを決める役割があります。
+   🌞 Swaggerを使う準備をしよう 🖊 Swagger Editorを開こう 下のリンクをクリックしてください
+→📚 Swagger Editor
+ 左：Swagger editor → 設定を書く場所。コードで確認。 右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。    🌞 APIの基本構造を理解しよう 🖊 パスとは何かを知ろう  パスはサーバー上のデータや機能の住所のようなものです。  例：
+ パス：/memo 意味：「メモのデータがある場所」  アプリやブラウザは、この住所を指定して「この場所の情報をください」とサーバーにリクエストします。
+ 🖊 操作の種類（HTTPメソッド）を知ろう  パスは「操作の種類」と組み合わせて使います。     メソッド 意味     GET データを取得する（見るだけ）   POST 新しいデータを作る   PUT データを更新する（書き換える）   DELETE データを削除する    ※ 今回使用するのは GET と PUT です。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://Rana-s07.github.io/post/swagger/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-12-28T00:00:00+00:00" />
@@ -166,18 +148,12 @@
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Swagger  ⏰約20分"/>
-<meta name="twitter:description" content="Swagger 環境
-・API version：OpenAPI 3.0.0
-・API表示ツール：Swagger UI
-・API編集ツール：Swagger Editor
- 📚 swagger editor  ↑まずはここをクリック  🌞 Swaggerとは 🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります
-🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います
-🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます
-🖊 パスの説明をします 1. パスとは何か？ 🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。
-たとえば：
- 住所（パス）: localhost:8080/accounts 意味: 「アカウントの情報がある場所」 これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。  2. 操作（HTTPメソッド）と組み合わせる 🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：
- GET: データを取得する（見るだけ） POST: 新しいデータを追加する（作る） PUT: データを更新する（書き換える） DELETE: データを削除する（消す）
-※今回使用するのはGETとPUT  🖊 実際に書いていきます 🌷 画像はswagger editor (左) とswagger UI (右) です"/>
+<meta name="twitter:description" content="🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。 バックエンドとフロントエンドの共通ルールを決める役割があります。
+   🌞 Swaggerを使う準備をしよう 🖊 Swagger Editorを開こう 下のリンクをクリックしてください
+→📚 Swagger Editor
+ 左：Swagger editor → 設定を書く場所。コードで確認。 右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。    🌞 APIの基本構造を理解しよう 🖊 パスとは何かを知ろう  パスはサーバー上のデータや機能の住所のようなものです。  例：
+ パス：/memo 意味：「メモのデータがある場所」  アプリやブラウザは、この住所を指定して「この場所の情報をください」とサーバーにリクエストします。
+ 🖊 操作の種類（HTTPメソッド）を知ろう  パスは「操作の種類」と組み合わせて使います。     メソッド 意味     GET データを取得する（見るだけ）   POST 新しいデータを作る   PUT データを更新する（書き換える）   DELETE データを削除する    ※ 今回使用するのは GET と PUT です。"/>
 
   
   
@@ -192,7 +168,7 @@
     <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
   <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
     <a class="-translate-y-[1px] text-2xl font-medium" href="https://Rana-s07.github.io/"
-      >Paper</a
+      >新田研究室 アプリ開発チュートリアル（ここをクリックでホームへ）</a
     >
     <div
       class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
@@ -303,55 +279,83 @@
     
   </header>
 
-  <section><hr>
-<p>Swagger 環境<br>
-・API version：OpenAPI 3.0.0<br>
-・API表示ツール：Swagger UI<br>
-・API編集ツール：Swagger Editor</p>
+  <section><h2 id="-swaggerとは">🌞 Swaggerとは？</h2>
+<ul>
+<li>アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。</li>
+<li>「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。</li>
+<li>Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。</li>
+<li>バックエンドとフロントエンドの共通ルールを決める役割があります。<br>
+<br></li>
+</ul>
 <hr>
-<h2 id="-swagger-editorhttpseditorswaggerio">📚 <a href="https://editor.swagger.io/">swagger editor</a></h2>
+<h2 id="-swaggerを使う準備をしよう">🌞 Swaggerを使う準備をしよう</h2>
+<h3 id="-swagger-editorを開こう">🖊 Swagger Editorを開こう</h3>
+<p>下のリンクをクリックしてください<br>
+→📚 <a href="https://editor.swagger.io/">Swagger Editor</a></p>
 <ul>
-<li>↑まずはここをクリック</li>
+<li>左：Swagger editor → 設定を書く場所。コードで確認。</li>
+<li>右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。
+<img src="/images/Swagger_final.png" alt="images"></li>
 </ul>
-<h2 id="-swaggerとは">🌞 <strong>Swaggerとは</strong></h2>
-<p>🌷 オンラインのアプリを作るには、バックエンド（Webサーバ上で動くプログラム）を開発する必要があります<br>
-🌷 バックエンドのコードを書く前に、何のデータをどんな形でサーバに送るのか、アカウントがなかったらどのようなエラーを返すか（404？401？)などを決めておく必要があります。これを Web API と言います<br>
-🌷 Web API （厳密には RESTful API）を決めるために、Swaggerというツールが便利です。バックエンドのコードを書くときには Swagger で決めた内容を確認しながら書いていきます</p>
-<h2 id="-パスの説明をします">🖊 パスの説明をします</h2>
-<h3 id="1-パスとは何か">1. パスとは何か？</h3>
-<p>🌷 パスは、Web サーバー上で特定のデータや機能にアクセスするための「住所」のようなものです。<br>
-たとえば：</p>
-<ul>
-<li>住所（パス）: localhost:8080/accounts</li>
-<li>意味: 「アカウントの情報がある場所」</li>
-<li>これをブラウザやアプリが指定して、サーバーに「この住所にある情報をください」と頼む形です。</li>
-</ul>
-<h3 id="2-操作httpメソッドと組み合わせる">2. 操作（HTTPメソッド）と組み合わせる</h3>
-<p>🌷 パスは操作の種類と一緒に使います。操作の種類は「HTTPメソッド」と呼ばれる以下のものです：</p>
-<ul>
-<li>GET: データを取得する（見るだけ）</li>
-<li>POST: 新しいデータを追加する（作る）</li>
-<li>PUT: データを更新する（書き換える）</li>
-<li>DELETE: データを削除する（消す）<br>
-※今回使用するのはGETとPUT</li>
-</ul>
-<h2 id="-実際に書いていきます">🖊 実際に書いていきます</h2>
-<p>🌷 画像はswagger editor (左) とswagger UI (右) です</p>
-<ul>
-<li>editor: 設定を書く場所</li>
-<li>UI：editorで書いた設定が反映されてドキュメントになる場所</li>
-</ul>
-<p>🌷 コードをeditorにコピペしながら、UIと比べて理解していきましょう  <br>
-🌷 途中エラーが出ますが、最終的に解消されるのでそのまま進めてください（最終的にエラーが解消されなかったときは再起動してください）</p>
-<p><img src="/images/Swagger_final.png" alt="images"></p>
 <hr>
-<h2 id="ediorを空にして書いていきましょう">ediorを空にして書いていきましょう！</h2>
-<p><img src="/images/Swagger_first.png" alt="images">
-<br/></p>
-<h2 id="-openapi--info">① openapi / info</h2>
+<h2 id="-apiの基本構造を理解しよう">🌞 APIの基本構造を理解しよう</h2>
+<h3 id="-パスとは何かを知ろう">🖊 パスとは何かを知ろう</h3>
 <ul>
-<li>API の名前・説明を書く場所。</li>
-<li>UI の一番上にそのまま表示されます。</li>
+<li>パスはサーバー上のデータや機能の<strong>住所</strong>のようなものです。</li>
+</ul>
+<p>例：</p>
+<ul>
+<li>パス：/memo</li>
+<li>意味：「メモのデータがある場所」</li>
+</ul>
+<p>アプリやブラウザは、この住所を指定して「この場所の情報をください」とサーバーにリクエストします。</p>
+<hr>
+<h3 id="-操作の種類httpメソッドを知ろう">🖊 操作の種類（HTTPメソッド）を知ろう</h3>
+<ul>
+<li>パスは「操作の種類」と組み合わせて使います。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>メソッド</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>データを取得する（見るだけ）</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>新しいデータを作る</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>データを更新する（書き換える）</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>データを削除する</td>
+</tr>
+</tbody>
+</table>
+<p>※ 今回使用するのは <strong>GET と PUT</strong> です。</p>
+<hr>
+<h2 id="-swagger-editorでapiを書いてみよう">🌞 Swagger EditorでAPIを書いてみよう</h2>
+<h2 id="-ediorを空にします">🖊 ediorを空にします</h2>
+<p><img src="/images/Swagger_first.png" alt="images"></p>
+<ul>
+<li>これから、<strong>コードを少しずつコピーしながらUIの変化を確認</strong>していきます。</li>
+<li>途中でエラーが出ても、最終的に解消されるのでそのまま進めてください。<br>
+（最後までエラーが消えない場合は、ページを再読み込みしてください。）</li>
+</ul>
+<hr>
+<h2 id="-apiの情報を定義しよう">🌞 APIの情報を定義しよう</h2>
+<h3 id="--openapi--info-を書こう">🖊 ① openapi / info を書こう</h3>
+<ul>
+<li>APIの名前や説明を書く場所です。</li>
+<li>Swagger UIの一番上に表示されます。</li>
 </ul>
 <p>コピペ用↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.0</span>
@@ -361,24 +365,25 @@
   <span style="color:#f92672">description</span>: |<span style="color:#e6db74">
 </span><span style="color:#e6db74">    簡単なメモアプリ用のAPIです。
 </span><span style="color:#e6db74">    1つのメモデータを取得・更新することができます。</span>    
-</code></pre></div><p><img src="/images/Swagger_openapi_info.png" alt="images">
-<br/></p>
-<h2 id="-tags">② tags</h2>
+</code></pre></div><p><img src="/images/Swagger_openapi_info.png" alt="images"></p>
+<hr>
+<h2 id="-apiをグループ分けしよう">🌞 APIをグループ分けしよう</h2>
+<h3 id="--tags-を書こう">🖊 ② tags を書こう</h3>
 <ul>
-<li>APIをグループ分けするためのタグ。</li>
-<li>UIにmemoという見出しができます。</li>
+<li>APIをカテゴリごとにまとめるための設定です。</li>
+<li>Swagger UIに「memo」という見出しが表示されます。</li>
 </ul>
 <p>コピペ用↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tags</span>:
   - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">memo</span>
     <span style="color:#f92672">description</span>: <span style="color:#ae81ff">メモ内容の取得・更新</span>
-</code></pre></div><p><img src="/images/Swagger_tags.png" alt="images">
-<br/></p>
-<h2 id="-pathsapiの本体">③ paths（APIの本体）</h2>
-<h3 id="1-get-memo取得">1. GET /memo（取得）</h3>
+</code></pre></div><p><img src="/images/Swagger_tags.png" alt="images"></p>
+<hr>
+<h2 id="-メモapiの処理を書こう">🌞 メモAPIの処理を書こう</h2>
+<h3 id="--メモを取得するapiget-memo">🖊 ③ メモを取得するAPI（GET /memo）</h3>
 <ul>
-<li>メモを「読む」API。</li>
-<li>UI に青い「GET」ボタンが表示されます。</li>
+<li>保存されているメモを取得するAPIです。</li>
+<li>Swagger UIでは青色のGETとして表示されます。</li>
 </ul>
 <p>コピペ用↓</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">paths</span>:
@@ -395,14 +400,14 @@
             <span style="color:#f92672">application/json</span>:
               <span style="color:#f92672">schema</span>:
                 <span style="color:#f92672">$ref</span>: <span style="color:#e6db74">&#34;#/components/schemas/Memo&#34;</span>
-</code></pre></div><p><img src="/images/Swagger_paths_get.png" alt="images">
-<br/></p>
-<h3 id="2-put-memo更新">2. PUT /memo（更新）</h3>
+</code></pre></div><p><img src="/images/Swagger_paths_get.png" alt="images"></p>
+<hr>
+<h3 id="--メモを更新するapiput-memo">🖊 ④ メモを更新するAPI（PUT /memo）</h3>
 <ul>
-<li>メモを「書き換える」API。</li>
-<li>UI に黄色いフォームが表示され、text を入力できます。</li>
+<li>メモの内容を書き換えるAPIです。</li>
+<li>Swagger UIでは黄色のPUTとして表示されます。</li>
 </ul>
-<p>コピペ用↓　⚠インデントに注意！</p>
+<p>コピペ用↓ ⚠インデントに注意！</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">put</span>:
       <span style="color:#f92672">tags</span>:
         - <span style="color:#ae81ff">memo</span>
@@ -435,14 +440,15 @@
               <span style="color:#f92672">schema</span>:
                 <span style="color:#f92672">type</span>: <span style="color:#ae81ff">string</span>
                 <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;メモを入力してください&#34;</span>
-</code></pre></div><p><img src="/images/Swagger_paths_put.png" alt="images">
-<br/></p>
-<h2 id="-componentsデータ型">④ components（データ型）</h2>
+</code></pre></div><p><img src="/images/Swagger_paths_put.png" alt="images"></p>
+<hr>
+<h2 id="-データの形を定義しよう">🌞 データの形を定義しよう</h2>
+<h3 id="--componentsmemoの形を書こう">🖊 ⑤ components（Memoの形）を書こう</h3>
 <ul>
-<li>API が扱うデータの形（モデル）を定義します。</li>
-<li>UI の下部に「Memo」が表示されて中身が確認できます。</li>
+<li>APIで扱うデータの構造を定義します。</li>
+<li>Swagger UIの下部に「Memo」が表示されます。</li>
 </ul>
-<p>コピペ用↓　⚠インデントに注意！</p>
+<p>コピペ用↓ ⚠インデントに注意！</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">components</span>:
   <span style="color:#f92672">schemas</span>:
     <span style="color:#f92672">Memo</span>:
@@ -454,9 +460,9 @@
       <span style="color:#f92672">required</span>:
         - <span style="color:#ae81ff">text</span>
 </code></pre></div><p><img src="/images/Swagger_components.png" alt="images"></p>
-<h3 id="完成">🌷完成！</h3>
 <hr>
-<h2 id="最終版editor">☆最終版editor↓</h2>
+<h2 id="完成">🌷完成！</h2>
+<h2 id="-最終版editor">🌞 最終版editor↓</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">openapi</span>: <span style="color:#ae81ff">3.0.0</span>
 <span style="color:#f92672">info</span>:
   <span style="color:#f92672">title</span>: <span style="color:#ae81ff">メモAPI</span>
@@ -527,22 +533,31 @@
           <span style="color:#f92672">example</span>: <span style="color:#e6db74">&#34;買い物リスト：りんご、牛乳&#34;</span>
       <span style="color:#f92672">required</span>:
         - <span style="color:#ae81ff">text</span>
-</code></pre></div><h2 id="最終版ui">☆最終版UI↓</h2>
+</code></pre></div><h2 id="-最終版ui">🌞 最終版UI↓</h2>
 <p><img src="/images/Swagger_final_UI.png" alt="images">
 <img src="/images/Swagger_final_UI2.png" alt="images">
 <img src="/images/Swagger_final_UI3.png" alt="images"></p>
-<p>🌷 FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。<br>
-🌷 他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</p>
-<h2 id="まとめ">まとめ</h2>
+<hr>
+<p>⭐ポイント⭐</p>
 <ul>
-<li>info: APIの基本情報</li>
-<li>tags: カテゴリ分け</li>
-<li>paths: GETやPUTの処理を書く本体</li>
-<li>components: データの定義</li>
+<li>FileタブのSave as YAML を押すと左のコードをyaml形式で保存できるため、このコードをチームで共有できます。</li>
+<li>他のチームのコードを開くときは、FileタブのImport fileを押し、保存したファイルを開くと閲覧や編集ができる。</li>
 </ul>
-<p>以上でswaggerは終わり🎉</p>
-<p>2/5進んだよ🎊  何分かかかったかな？  休憩してね☕</p>
-<p>次はIntellij ideaでバックエンドのコードを書いていくよ！</p>
+<hr>
+<h2 id="-まとめ">🌞 まとめ</h2>
+<ul>
+<li>Swaggerでは、APIの設計をコードを書く前に確認できます。</li>
+<li>今回は「メモを取得するAPI（GET）」「メモを更新するAPI（PUT）」「メモのデータ構造（Memo）」
+<br>
+<br></li>
+</ul>
+<p>以上でswaggerは終わりです。🎉<br>
+2/5進んだよ🎊  何分かかかったかな？  休憩してね☕<br>
+次はIntellij ideaでバックエンドのコードを書いていくよ！</p>
+<hr>
+<p>Swagger 環境<br>
+・API version：OpenAPI 3.0.0</p>
+<hr>
 </section>
 
   
