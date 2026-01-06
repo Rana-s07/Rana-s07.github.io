@@ -77,16 +77,10 @@
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/android_studio/</guid>
-      <description>🌞 フロンドエンド書いていくよ！ 🌷 スマホやPC上で動くプログラムをフロントエンドといいます
-🌷 ここでは、アンドロイド向けのアプリを開発するので、Android Studio を使います
-🌷 Android Studio は IntelliJ IDEA と同じ会社が開発している統合開発環境なので、使い方は変わりません。言語も同じ Java で書いていきます
-🌷 まず、Android Studio のプロジェクトを作成していきましょう
-🖊手順を説明します🐘 🌷 NewProjectを押します
-     🌷 Empty Views Activity を押します
-     🌷 Nameにタイトルを入力 （LesonServer）と入力 🌷 Build configuration languageを Groovy DSL にする
-🌷 Minimum SDKを API30 にする
-     🌷 左上がProjectとなっていますが、準備中なので、「Android」と表示されるまで待ちます
-     🌷 今、右で表示されている MainActivity.java のファイルの位置を確認します</description>
+      <description>🌞 Android Studioとは？  Android Studioは、Androidアプリを作成するための開発ツールです。 この章では、 メモアプリの画面（フロントエンド） を作成します。 Androidアプリは、ユーザーの操作を受け取り、サーバー（バックエンド）と通信します。   🌞 準備をしよう！ 🖊 使用するAndroid Studioのバージョン  この教材では Android Studio Otter 2025.2.1 Patch 1 を使って説明します。 バージョンが異なる場合、表示や操作手順が一部異なることがあります。   🖊 他のプロジェクトを閉じよう（開いている場合）  左上のハンバーガーメニュー（≡）をクリックしてください。 File → Close Project をクリックしてください。
+   🖊 新しいProjectを作成しよう  「NewProject」をクリックしてください。
+ 「Empty Views Activity」を選択し、Nextをクリックしてください。  以下の設定を行い、Finishをクリックしてください。   Nameは 「MemoClient」 に変更 Minimum SDKは 「API36.0（&amp;ldquo;Baklava&amp;rdquo;;Android 16.0）」 を選択 Build configuration language は 「Groovy DSL（build.gradle）」 を選択
+  Gradleのimportが終わるまで待ちます。   🌷 Project「MemoClient」の作成完了！</description>
     </item>
     
   </channel>
