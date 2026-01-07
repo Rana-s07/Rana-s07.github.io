@@ -31,7 +31,7 @@
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/swagger/</guid>
-      <description>🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「データの設計」を行う場所です。 バックエンドとフロントエンドの共通ルールを決める役割があります。
+      <description>🌞 Swaggerとは？  アプリで使うAPI（データのやりとりのルール）を設計・確認するためのツールです。 「どんなURLに」「どんなデータを送ると」「何が返ってくるか」を、コードを書く前に決めることができます。 Figmaが「画面の設計」だとすると、Swaggerは「共有データの設計」を行う場所です。 バックエンドとフロントエンドのコードを書くための共通ルールを決める役割があります。
    🌞 Swaggerを使う準備をしよう 🖊 Swagger Editorを開こう 下のリンクをクリックしてください
 →📚 Swagger Editor
  左：Swagger editor → 設定を書く場所。コードで確認。 右：Swagger UI → 設定内容が反映されたAPIドキュメント。見た目で確認。    🌞 APIの基本構造を理解しよう 🖊 パスとは何かを知ろう  パスはサーバー上のデータや機能の住所のようなものです。  例：
@@ -45,14 +45,22 @@
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/intellij_idea/</guid>
-      <description>🌞 IntelliJ IDEAとは？  IntelliJ IDEAは、 Javaを使ったアプリやサーバーを開発するための開発ツール（IDE） です。 この章では、Swaggerで設計したAPIをもとに、 実際に動くサーバー（バックエンド） を作成します。 ここで作ったサーバーに、あとからAndroidアプリが通信します。   🌞 サーバー構成を理解しよう（アプリ開発における構成） 🖊 新田研究室での基本構成 🌷 新田研のプロジェクトでは、役割ごとに 3つのpackage を作って開発を進めます。
+      <description>Intellij IDEA 環境
+・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）
+・ビルド番号: IU-242.23339.11
+・Runtime（Java）: Java 21.0.4
+・Ultimate （学生および教職員向けの個人ライセンス）を使用
+ 🌞 アプリ開発における構成 🌷 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。
  entities
 データの形を定義する repositories
-データを保存・取得する処理を書く resources
-外部とやりとりする窓口（API）
-  それぞれのpackageの中に、対応するJavaファイルを作成します。
-例）19th　シトラスプロジェクト↓  🌞 MemoServerを作ろう！ 🖊 使用するIntelliJ IDEAのバージョン  この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。 バージョンが異なる場合、表示や操作手順が一部異なることがあります。  🖊 他のプロジェクトを閉じよう（開いている場合）  左上のハンバーガーメニュー（≡）をクリックしてください。 File → Close Project をクリックしてください。↓
-   🖊 新しいProjectを作成しよう  NewProject をクリックしてください。↓  以下の設定を行い、Nextをクリックしてください。   左の Spring Boot を選択 Name は 「MemoServer」に変更 JDK は「openjdk-23 (java version&amp;quot;23.</description>
+データを保存・取得する resources
+外部との窓口（API）
+  🌷それぞれのpackageの中に、対応するJavaファイルを作成します。
+例）19th　シトラスプロジェクト↓ 🌞 MemoServerを作っていきましょう！   IntelliJ IDEAのバージョン
+この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。以降の画像はこのバージョンを基準にしているため、別のバージョンを使用している場合、表示や操作手順が一部異なることがあるため注意してください。
+  他のプロジェクトを開いている場合
+ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。   🖊 Project作ります  NewProjectをクリック  設定を変更して、Nextをクリック ➀ 左の Spring Boot を選択
+② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&amp;quot;23.</description>
     </item>
     
     <item>
@@ -77,10 +85,9 @@
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://Rana-s07.github.io/post/android_studio/</guid>
-      <description>🌞 Android Studioとは？  Android Studioは、Androidアプリを作成するための開発ツールです。 この章では、 メモアプリの画面（フロントエンド） を作成します。 Androidアプリは、ユーザーの操作を受け取り、サーバー（バックエンド）と通信します。   🌞 準備をしよう！ 🖊 使用するAndroid Studioのバージョン  この教材では Android Studio Otter 2025.2.1 Patch 1 を使って説明します。 バージョンが異なる場合、表示や操作手順が一部異なることがあります。   🖊 他のプロジェクトを閉じよう（開いている場合）  左上のハンバーガーメニュー（≡）をクリックしてください。 File → Close Project をクリックしてください。
-   🖊 新しいProjectを作成しよう  「NewProject」をクリックしてください。
- 「Empty Views Activity」を選択し、Nextをクリックしてください。  以下の設定を行い、Finishをクリックしてください。   Nameは 「MemoClient」 に変更 Minimum SDKは 「API36.0（&amp;ldquo;Baklava&amp;rdquo;;Android 16.0）」 を選択 Build configuration language は 「Groovy DSL（build.gradle）」 を選択
-  Gradleのimportが終わるまで待ちます。   🌷 Project「MemoClient」の作成完了！</description>
+      <description>🌞 Android Studioとは？  Android Studioは、Androidアプリを作成するための開発ツールです。 この章では、 メモアプリの画面（フロントエンド） を作成します。 Androidアプリは、ユーザーの操作を受け取り、サーバー（バックエンド）と通信します。   🌞 準備をしよう！  Android Studioで開発を始める準備をします。  🖊 使用するAndroid Studioのバージョン  この教材では Android Studio Otter 2025.2.1 Patch 1 を使って説明します。 バージョンが異なる場合、表示や操作手順が一部異なることがあります。   🖊 他のプロジェクトを閉じよう（開いている場合）  左上のハンバーガーメニュー（≡）をクリックしてください。 File → Close Project をクリックしてください。
+   🌞 メモアプリのプロジェクトを作成しよう！  新しくメモアプリ用のプロジェクトを作成します。  🖊 新しいProjectを作成しよう  「NewProject」をクリックしてください。
+ 「Empty Views Activity」を選択し、Nextをクリックしてください。  以下の設定を行い、Finishをクリックしてください。   Nameは 「MemoClient」 に変更 Minimum SDKは 「API36.0（&amp;ldquo;Baklava&amp;rdquo;;Android 16.0）」 を選択 Build configuration language は 「Kotlin DSL（build.</description>
     </item>
     
   </channel>
