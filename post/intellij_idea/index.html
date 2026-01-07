@@ -56,22 +56,17 @@
   
   
   
-  <meta name="description" content="Intellij IDEA 環境
-・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）
-・ビルド番号: IU-242.23339.11
-・Runtime（Java）: Java 21.0.4
-・Ultimate （学生および教職員向けの個人ライセンス）を使用
- 🌞 アプリ開発における構成 🌷 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。
+  <meta name="description" content="🌞 IntelliJ IDEAとは？  Javaを中心にしたプログラムを書くための開発ツール（IDE） です。 今回は、メモアプリのバックエンド（サーバー側） のコードを書くために使います。   🌞 アプリ開発における構成 ⭐ 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。
  entities
 データの形を定義する repositories
 データを保存・取得する resources
 外部との窓口（API）
-  🌷それぞれのpackageの中に、対応するJavaファイルを作成します。
-例）19th　シトラスプロジェクト↓ 🌞 MemoServerを作っていきましょう！   IntelliJ IDEAのバージョン
+  ⭐ それぞれのpackageの中に、対応するJavaファイルを作成します。
+例）19th　シトラスプロジェクト↓  🌞 MemoServerを作っていきましょう！   IntelliJ IDEAのバージョン
 この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。以降の画像はこのバージョンを基準にしているため、別のバージョンを使用している場合、表示や操作手順が一部異なることがあるため注意してください。
   他のプロジェクトを開いている場合
-ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。   🖊 Project作ります  NewProjectをクリック  設定を変更して、Nextをクリック ➀ 左の Spring Boot を選択
-② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&quot;23." />
+ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。    🖊 Project作ります  NewProjectをクリック  設定を変更して、Nextをクリック ➀ 左の Spring Boot を選択
+② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&quot;23.0.1&quot;)」を選択 ※openjdk-23 (java version&quot;ここは全く同じにしなくてもOK&quot;)  Webをクリック、Jersey を選択し、Createクリック  Gradleのimportが終わるまで待ちましょう 🌷 Project「MemoServer」の作成完了！   🖊 MemoServerに3つのPackageを作ります  ➀MemoServer → ②src → ③main → ④java の順にクリック" />
   <meta name="author" content="←この日付無視してね" />
   
 
@@ -134,7 +129,7 @@
   <meta itemprop="name" content="Intellij IDEA  ⏰約20分 ">
 <meta itemprop="description" content="ここはどこに表示されているのだろう"><meta itemprop="datePublished" content="2024-12-27T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-12-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="330">
+<meta itemprop="wordCount" content="340">
 <meta itemprop="keywords" content="" />
   
   <meta property="og:title" content="Intellij IDEA  ⏰約20分 " />
@@ -274,15 +269,14 @@
     
   </header>
 
-  <section><hr>
-<p>Intellij IDEA 環境<br>
-・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）<br>
-・ビルド番号: IU-242.23339.11<br>
-・Runtime（Java）: Java 21.0.4<br>
-・Ultimate （学生および教職員向けの個人ライセンス）を使用</p>
+  <section><h2 id="-intellij-ideaとは">🌞 <strong>IntelliJ IDEAとは？</strong></h2>
+<ul>
+<li><strong>Javaを中心にしたプログラムを書くための開発ツール（IDE）</strong> です。</li>
+<li>今回は、<strong>メモアプリのバックエンド（サーバー側）</strong> のコードを書くために使います。</li>
+</ul>
 <hr>
 <h2 id="-アプリ開発における構成">🌞 <strong>アプリ開発における構成</strong></h2>
-<p>🌷 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。</p>
+<p>⭐ 新田研のプロジェクトでは、役割ごとに3つのpackage を作って開発を進めます。</p>
 <ul>
 <li><strong>entities</strong><br>
 データの形を定義する</li>
@@ -292,9 +286,10 @@
 外部との窓口（API）<br>
 <br></li>
 </ul>
-<p>🌷それぞれのpackageの中に、対応するJavaファイルを作成します。<br>
+<p>⭐ それぞれのpackageの中に、対応するJavaファイルを作成します。<br>
 例）19th　シトラスプロジェクト↓
 <img src="/images/in.png" alt="images"></p>
+<hr>
 <h2 id="-memoserverを作っていきましょう">🌞 <strong>MemoServerを作っていきましょう！</strong></h2>
 <ul>
 <li>
@@ -307,6 +302,7 @@
 <img src="/images/Intellij_close.png" alt="images"></p>
 </li>
 </ul>
+<hr>
 <h2 id="-project作ります">🖊 Project作ります</h2>
 <ol>
 <li>NewProjectをクリック
@@ -323,6 +319,7 @@
 <img src="/images/Intellij_new4.png" alt="images">
 🌷 <strong>Project「MemoServer」の作成完了！</strong></li>
 </ol>
+<hr>
 <h2 id="-memoserverに3つのpackageを作ります">🖊 MemoServerに3つのPackageを作ります</h2>
 <ol>
 <li>➀MemoServer → ②src → ③main → ④java の順にクリック<br>
@@ -338,6 +335,7 @@
 <img src="/images/Intellij_package_final.png" alt="images">
 🌷 <strong>「repositories package」「resources package」の作成完了！</strong></li>
 </ol>
+<hr>
 <h2 id="-それぞれのpackageの中にjava-classを作ります">🖊 それぞれのPackageの中にJava Classを作ります</h2>
 <ul>
 <li>entitiesの中には「Memo.java」を作ります</li>
@@ -360,6 +358,7 @@
 <img src="/images/Intellij_javaclass_final.png" alt="images">
 🌷 <strong>「MemoRepository.java」「MemoResource.java」の作成完了!</strong></li>
 </ol>
+<hr>
 <h2 id="-jerseyconfigjavaを作ります">🖊 JerseyConfig.javaを作ります</h2>
 <ul>
 <li><strong>JerseyConfigとは&hellip;</strong><br>
@@ -376,6 +375,7 @@ Jersey に「どのクラスを API として使うか」を教えるための�
 <img src="/images/Intellij_config_final.png" alt="images">
 🌷 <strong>「JerseyConfig.java」の作成完了!</strong></li>
 </ol>
+<hr>
 <h2 id="-コードを書きます">🖊 コードを書きます</h2>
 <ul>
 <li>それぞれのコードをコピペしてください</li>
@@ -472,7 +472,9 @@ Jersey に「どのクラスを API として使うか」を教えるための�
         memoRepository<span style="color:#f92672">.</span><span style="color:#a6e22e">setMemo</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Memo<span style="color:#f92672">(</span>text<span style="color:#f92672">));</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><h2 id="-実行してみましょう">🖊 実行してみましょう</h2>
+</code></pre></div><p>🌷 <strong>コード完了！</strong></p>
+<hr>
+<h2 id="-実行してみましょう">🖊 実行してみましょう</h2>
 <ul>
 <li>実行する前にGradleを更新します<br>
 実行前にGradleを更新するのは、プロジェクトを正しく動かすための準備を整えるためです。Gradleが古いままだと、コードが正しくてもエラーになります。</li>
@@ -481,9 +483,9 @@ Jersey に「どのクラスを API として使うか」を教えるための�
 <li>象のマーク🐘をクリック</li>
 <li>更新マーク🔄をクリック
 <img src="/images/Intellij_gradle.png" alt="images">
-🌷 <strong>Gradleの更新完了</strong>
-<br></li>
+🌷 <strong>Gradleの更新完了</strong></li>
 </ol>
+<hr>
 <ul>
 <li>実行します</li>
 </ul>
@@ -491,11 +493,18 @@ Jersey に「どのクラスを API として使うか」を教えるための�
 <li>実行ボタンをクリック
 <img src="/images/Intellij_run.png" alt="images"></li>
 <li>画像の用にspringが出たら成功
-<img src="/images/Intellij_final.png" alt="images">
-以上でIntellij ideaは終わり🎉</li>
+<img src="/images/Intellij_final.png" alt="images"></li>
 </ol>
+<p>以上でIntellij ideaは終わり🎉</p>
 <p>3/5終わったよ🎊  何分かかかったかな？  休憩してね☕</p>
 <p>次はこのコードが動いているかPostmanで試していくよ！</p>
+<hr>
+<p>Intellij IDEA 環境<br>
+・製品名: IntelliJ IDEA 2024.2.3（Ultimate Edition）<br>
+・ビルド番号: IU-242.23339.11<br>
+・Runtime（Java）: Java 21.0.4<br>
+・Ultimate （学生および教職員向けの個人ライセンス）を使用</p>
+<hr>
 </section>
 
   
