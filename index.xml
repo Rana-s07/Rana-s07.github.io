@@ -53,9 +53,9 @@
   ⭐ それぞれのpackageの中に、対応するJavaファイルを作成します。
 例）19th　シトラスプロジェクト↓  🌞 MemoServerを作っていきましょう！   IntelliJ IDEAのバージョン
 この教材では IntelliJ IDEA 2024.1（Ultimate Edition） を使って説明します。以降の画像はこのバージョンを基準にしているため、別のバージョンを使用している場合、表示や操作手順が一部異なることがあるため注意してください。
-  他のプロジェクトを開いている場合
+同じバージョンをダウンロードするURLです。→ 📚Download Intellij IDEA   他のプロジェクトを開いている場合
 ハンバーガーメニュー（左上の4本線）をクリック→Fileをクリック→Close Projectをクリックします。    🖊 Project作ります  NewProjectをクリック  設定を変更して、Nextをクリック ➀ 左の Spring Boot を選択
-② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&amp;quot;23.0.1&amp;quot;)」を選択 ※openjdk-23 (java version&amp;quot;ここは全く同じにしなくてもOK&amp;quot;)  Webをクリック、Jersey を選択し、Createクリック  Gradleのimportが終わるまで待ちましょう 🌷 Project「MemoServer」の作成完了！   🖊 MemoServerに3つのPackageを作ります  ➀MemoServer → ②src → ③main → ④java の順にクリック</description>
+② Name は 「MemoServer」に変更 ③ JDK は「openjdk-23 (java version&amp;quot;23.</description>
     </item>
     
     <item>
